@@ -1,0 +1,9 @@
+{
+  "name": "device-information-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static showcase website for the Device Info Android app.",
+  "engines": {
+    "node": "24.x"
+  }
+}
