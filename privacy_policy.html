@@ -4,85 +4,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Info: CPU & System</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
-        }
-
-        .header {
-            background-color: #8f98fd;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .content {
-            padding: 50px;
-            margin: 0 50px;
-            /* Added horizontal padding */
-        }
-
-        .privacy-policy {
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-        }
-
-        /* Style for clickable email */
-        .email-link {
-            color: #007bff;
-            /* Blue color for link */
-            text-decoration: none;
-            /* Remove underline */
-        }
-
-        .email-link:hover {
-            text-decoration: underline;
-            /* Underline on hover */
-        }
-    </style>
+    <meta name="description"
+        content="Privacy Policy for Device Info, including Firebase services, permission usage, and data handling details.">
+    <meta name="theme-color" content="#0A0E27">
+    <title>Device Info | Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="header">
-        <h1>Device Info: CPU & System</h1>
-    </div>
-    <div class="content">
-        <div class="privacy-policy">
-            <h2>Privacy Policy</h2>
-            <p><strong>Developer:</strong> Suryansh Prajapati</p>
-            <!-- Added anchor tag for clickable email -->
-            <p><strong>Email:</strong> <a href="mailto:itssuryanshprajapati@gmail.com"
-                    class="email-link">itssuryanshprajapati@gmail.com</a></p>
-            <h3>Data Collection</h3>
-            <p>Device Info: CPU & System does not gather confidential user data. The app solely collects information regarding the device model and manufacturer for reading purposes only; it is not stored anywhere. These data are utilized to identify the chipset, device name, CPU architecture, memory type, and bandwidth, among other specifications. Personal information such as email addresses, names, and addresses is not collected.</p> 
+<body class="page-policy">
+    <div class="page-shell">
+        <header class="site-header site-header--static">
+            <nav class="nav container" aria-label="Primary">
+                <a href="index.html" class="brand">
+                    <img src="assets/app_icon_whiteBg.png" alt="Device Info app icon" class="brand__icon">
+                    <span class="brand__text">
+                        <strong>Device Info</strong>
+                        <small>Privacy Policy</small>
+                    </span>
+                </a>
 
-            <p>At Device Info, we uphold the principle of respecting your privacy. We do not gather or distribute any personal data. We firmly believe in your right to control your information and assure you that your personal information remains undisclosed and unshared.</p>
-            <h3>Required Permissions</h3>
-            <ul>
-                <li><strong>READ_PHONE_STATE</strong> - needed to get information such as the carrier names and the
-                    device IDs</li>
-                <li><strong>ACCESS_NETWORK_STATE</strong> - needed to determine if the device is connected to a network
-                    and what type of network it is connected to (e.g., WiFi or mobile data)</li>
-                <li><strong>ACCESS_WIFI_STATE</strong> - needed to determine if the device is connected to a WiFi
-                    network and retrieve information about the WiFi connection</li>
-                <li><strong>INTERNET</strong> - needed to access the internet to fetch device information and display it
-                    in the app</li>
-            </ul>
-        </div>
-        <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or concerns about this policy, you can contact us by email: <a
-                    href="mailto:itssuryanshprajapati@gmail.com" class="email-link">itssuryanshprajapati@gmail.com</a>
-            </p>
-        </div>
+                <div class="nav__menu nav__menu--static">
+                    <ul class="nav__list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#permissions">Permissions</a></li>
+                        <li><a href="#firebase">Firebase</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="policy-main">
+            <section class="policy-hero section">
+                <div class="container">
+                    <a href="index.html" class="back-link">Back to website</a>
+                    <div class="policy-hero__card panel">
+                        <p class="eyebrow">Privacy Policy</p>
+                        <h1>Device Info</h1>
+                        <p>
+                            This policy explains what Device Info accesses, what is processed on-device, what is shared
+                            with Firebase services, and why each declared Android permission is used.
+                        </p>
+                        <div class="policy-meta">
+                            <span>Last updated: March 19, 2026</span>
+                            <span>Developer: Suryansh Prajapati</span>
+                            <a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container policy-layout">
+                    <article class="policy-shell">
+                        <section class="policy-section panel">
+                            <h2>1. Scope</h2>
+                            <p>
+                                Device Info is a native Android application that shows device hardware, software,
+                                battery, memory, network, sensor, installed-app, widget, and diagnostics information.
+                                This policy applies to the Android app and this support website.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>2. Information used by the app</h2>
+                            <p>
+                                The app reads device and app-related information to display it to the user inside the
+                                app. Depending on the screen or feature being used, this can include device model,
+                                manufacturer, Android version, build details, display metrics, battery state, network
+                                state, available sensors, RAM and storage details, and installed app inventory.
+                            </p>
+                            <p>
+                                Most of this information is used locally on the device to render UI, widgets, and
+                                diagnostics results. The app is not designed to sell personal information.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel" id="firebase">
+                            <h2>3. Firebase services</h2>
+                            <p>
+                                Device Info uses Firebase Analytics, Firebase Crashlytics, and Firebase Remote Config.
+                                These services are provided by Google and may process technical data needed to operate
+                                those services.
+                            </p>
+                            <div class="policy-subgrid">
+                                <div>
+                                    <h3>Firebase Analytics</h3>
+                                    <p>
+                                        Used to understand app usage, feature adoption, and overall product health.
+                                        Analytics may process app instance identifiers, app interaction events, and
+                                        related technical metadata.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3>Firebase Crashlytics</h3>
+                                    <p>
+                                        Used to detect crashes, diagnose failures, and improve stability. Crashlytics
+                                        may process crash stack traces, app state at the time of a crash, device
+                                        metadata, and installation-related identifiers.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3>Firebase Remote Config</h3>
+                                    <p>
+                                        Used to manage app behavior and appearance without requiring an app update.
+                                        Remote Config may process country, language, time zone, platform and OS
+                                        version, app identifiers, and installation identifiers to deliver the right
+                                        configuration values.
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="policy-note">
+                                Firebase data handling and retention may vary by service and project settings. Firebase
+                                documentation currently states that Crashlytics retains crash data for a limited period
+                                and that installation identifiers may remain until deleted, after which removal from
+                                live and backup systems can take time.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel" id="permissions">
+                            <h2>4. Permissions and why they are used</h2>
+                            <p>
+                                Device Info declares only permissions intended to support visible app features. If a
+                                permission is not granted, the related feature or diagnostic may be limited or
+                                unavailable.
+                            </p>
+
+                            <div class="permission-grid">
+                                <article class="permission-card">
+                                    <h3><code>ACCESS_NETWORK_STATE</code></h3>
+                                    <p>Used to detect active network connectivity and transport type so the app can show
+                                        network status, run network-related diagnostics, and keep dashboard or widget
+                                        summaries current.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>ACCESS_WIFI_STATE</code></h3>
+                                    <p>Used to read Wi-Fi connection details needed for network information screens and
+                                        diagnostics, such as current Wi-Fi state and supported connection details
+                                        available to the app.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>INTERNET</code></h3>
+                                    <p>Used for Firebase Analytics, Crashlytics, and Remote Config communication, and to
+                                        reach online services required for diagnostics or app support flows.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>READ_PHONE_STATE</code></h3>
+                                    <p>Used only for device and telephony-related status information that may be shown
+                                        in system or network details on supported devices, such as carrier or service
+                                        state information. It is not used to place calls or read contacts or messages.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>CAMERA</code></h3>
+                                    <p>Used for flashlight or torch diagnostics that rely on camera hardware access. The
+                                        permission supports the hardware test flow and is not intended for capturing
+                                        photos or videos.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>RECORD_AUDIO</code></h3>
+                                    <p>Used for the microphone diagnostic to show live audio level feedback while the
+                                        user runs the test. Audio is not intended to be stored as user content by this
+                                        feature.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>VIBRATE</code></h3>
+                                    <p>Used for vibration diagnostics and haptic verification so users can confirm that
+                                        device vibration hardware is working correctly.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>QUERY_ALL_PACKAGES</code></h3>
+                                    <p>Used for the app's installed-app inventory feature so users can browse app
+                                        details across user and supported system packages, apply filters, search by
+                                        package or app name, and review app source information. This permission relates
+                                        to a visible, user-facing app management and device information feature.</p>
+                                </article>
+                            </div>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>5. Installed apps visibility</h2>
+                            <p>
+                                If the installed-app inventory feature is used, Device Info may access package names,
+                                app labels, icons, version information, install or update timestamps, source type, and
+                                other app metadata available through Android package APIs. This information is used to
+                                render the Apps tab and related summaries.
+                            </p>
+                            <p>
+                                App inventory data is treated as sensitive by Google Play policy. It should be used only
+                                for the user-facing inventory feature described in the app listing, not for advertising
+                                or resale.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>6. Diagnostics and local storage</h2>
+                            <p>
+                                The app may store local diagnostic state on the device so pass, fail, and in-progress
+                                test results can remain visible after app restarts. This local state supports the user
+                                experience and is not intended to act as a hidden profile of the user.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>7. Data sharing</h2>
+                            <p>
+                                Device Info may share technical and service-related data with Google Firebase for the
+                                purposes described above. Outside of these service providers and legal or security
+                                obligations, the app is not intended to sell personal information.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>8. Security and retention</h2>
+                            <p>
+                                Reasonable steps are taken to limit data access to what is necessary for app features,
+                                debugging, and service operation. Network communication with Firebase services is
+                                intended to occur over secure HTTPS connections.
+                            </p>
+                            <p>
+                                Locally stored diagnostic state can generally be removed by clearing the app's storage
+                                or uninstalling the app from the device. Retention and deletion of Firebase-processed
+                                data is governed by Firebase and Google service behavior, documentation, and project
+                                configuration.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>9. Policy updates</h2>
+                            <p>
+                                This policy may be updated when app features, permissions, third-party services, or
+                                regulatory expectations change. The latest version will be published on this page with
+                                a revised update date.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel" id="contact">
+                            <h2>10. Contact</h2>
+                            <p>
+                                If you have privacy, data handling, or permission questions, contact:
+                            </p>
+                            <p><strong>Suryansh Prajapati</strong></p>
+                            <p><a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a></p>
+                        </section>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container site-footer__content">
+                <p>Privacy policy for Device Info.</p>
+                <p>&copy; <span data-year></span> Device Info</p>
+            </div>
+        </footer>
     </div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

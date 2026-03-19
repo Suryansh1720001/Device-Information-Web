@@ -1,43 +1,32 @@
-const navToggle = document.querySelector(".nav__toggle"),
-    navMenu = document.querySelector(".nav__menu"),
-    changeTheme = document.querySelector(".change-theme"),
-    navClose = document.querySelector(".nav__close"),
-    navList = document.querySelectorAll(".nav__list"),
-    allFaqs = document.querySelectorAll(".all_faqs"),
-    themeBtnLight = document.getElementById("theme-button-light"),
-    themeBtnDark = document.getElementById("theme-button-dark");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const navMenu = document.querySelector("[data-nav-menu]");
+const navLinks = document.querySelectorAll("[data-nav-link]");
+const footerYear = document.querySelectorAll("[data-year]");
 
-navToggle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-    navToggle.style.display = "none";
-});
+if (navToggle && navMenu) {
+    const closeMenu = () => {
+        navMenu.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+    };
 
-navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-    navToggle.style.display = "block";
-});
-
-navList.forEach((item) => {
-    item.addEventListener("click", () => {
-        navMenu.classList.remove("show-menu");
-        if (navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)) {
-            navToggle.style.display = "block";
-        };
+    navToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
     });
-});
 
-allFaqs.forEach(item => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("active");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
     });
-});
 
-changeTheme.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
+    window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+}
+
+footerYear.forEach((node) => {
+    node.textContent = new Date().getFullYear();
 });

@@ -3,323 +3,235 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Info</title>
+    <meta name="description"
+        content="Device Info is an Android app for hardware, system, app, battery, network, sensor, and diagnostics insights with a modern Jetpack Compose UI.">
+    <meta name="theme-color" content="#0A0E27">
+    <title>Device Info | Android Device Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class="page-home">
+    <div class="page-shell">
+        <header class="site-header">
+            <nav class="nav container" aria-label="Primary">
+                <a href="#home" class="brand">
+                    <img src="assets/app_icon.png" alt="Device Info app icon" class="brand__icon">
+                    <span class="brand__text">
+                        <strong>Device Info</strong>
+                        <small>Android diagnostics and insights</small>
+                    </span>
+                </a>
 
+                <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu"
+                    aria-label="Open navigation" data-nav-toggle>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#home" class="nav__logo">
-                <img src="assets/device_info.png" alt="Device Info Logo" class="deviceInfo__logo">
-                <span>Device-Info</span>
-            </a>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link">Home</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#screenshots" class="nav__link">Screenshots</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
-                    </li>
-
-                    <!-- <li class="nav__item">
-                        <a href="#faqs" class="nav__link">FAQs</a>
-                    </li> -->
-
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
-                    </li>
-                </ul>
-
-                <!-- Close Button -->
-                <div class="nav__close" id="nav-close">
-                    <i class="uil uil-times"></i>
+                <div class="nav__menu" id="nav-menu" data-nav-menu>
+                    <ul class="nav__list">
+                        <li><a href="#overview" data-nav-link>Overview</a></li>
+                        <li><a href="#features" data-nav-link>Features</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="#contact" data-nav-link>Contact</a></li>
+                    </ul>
+                    <a class="button button--nav" href="https://play.google.com/store/apps/details?id=com.information.device"
+                        target="_blank" rel="noreferrer">Google Play</a>
                 </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero section" id="home">
+                <div class="container hero__layout">
+                    <div class="hero__copy">
+                        <p class="eyebrow">Modern device diagnostics</p>
+                        <h1>Everything important about an Android device, in one clean app.</h1>
+                        <p class="hero__description">
+                            Device Info brings hardware, system, battery, network, sensors, installed apps, widgets,
+                            and interactive device tests together in a polished Jetpack Compose experience that follows
+                            the system theme automatically.
+                        </p>
+
+                        <div class="hero__actions">
+                            <a class="button button--primary"
+                                href="https://play.google.com/store/apps/details?id=com.information.device"
+                                target="_blank" rel="noreferrer">Open on Google Play</a>
+                            <a class="button button--secondary" href="privacy_policy.html">Read Privacy Policy</a>
+                        </div>
+
+                        <ul class="hero__chips" aria-label="App highlights">
+                            <li>Hardware + system details</li>
+                            <li>Installed apps inventory</li>
+                            <li>Diagnostics test suite</li>
+                            <li>Widgets and live summaries</li>
+                        </ul>
+                    </div>
+
+                    <div class="hero__visual">
+                        <div class="device-preview panel">
+                            <img src="assets/0.png" alt="Device Info app preview" class="device-preview__image">
+                        </div>
+
+                        <div class="brand-card panel">
+                            <div class="brand-card__icons">
+                                <img src="assets/app_icon.png" alt="Device Info icon" class="brand-card__icon">
+                                <img src="assets/app_icon_whiteBg.png" alt="Device Info icon on white background"
+                                    class="brand-card__icon brand-card__icon--light">
+                            </div>
+                            <div class="brand-card__content">
+                                <h2>Updated branding</h2>
+                                <p>The showcase now uses the latest app icons and the same color direction as the
+                                    Android app.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="overview">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Overview</p>
+                        <h2>Built to help users understand device health, setup, and behavior quickly.</h2>
+                        <p>
+                            The app combines read-only device insights with guided tests, so users can check hardware
+                            details, software state, app inventory, and common diagnostics from one place.
+                        </p>
+                    </div>
+
+                    <div class="card-grid card-grid--overview">
+                        <article class="info-card panel">
+                            <h3>Hardware and system</h3>
+                            <p>Model, manufacturer, board, build details, Android version, patch level, kernel,
+                                memory, storage, display, battery, network, and sensor information.</p>
+                        </article>
+
+                        <article class="info-card panel">
+                            <h3>Installed apps and package insights</h3>
+                            <p>Browse installed apps with filtering, search, version details, install dates, source
+                                type, and APK size formatting for user and supported system packages.</p>
+                        </article>
+
+                        <article class="info-card panel">
+                            <h3>Interactive diagnostics</h3>
+                            <p>Run checks for display, multi-touch, speaker, microphone, flashlight, vibration,
+                                charging, network, and supported sensors with visible pass or fail state.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="features">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Features</p>
+                        <h2>Simple, readable, and focused on real device information.</h2>
+                    </div>
+
+                    <div class="card-grid card-grid--features">
+                        <article class="feature-card panel">
+                            <h3>Dashboard summaries</h3>
+                            <p>Quick-glance cards for device profile, battery, RAM, storage, display, sensors,
+                                installed apps, and diagnostics progress.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>System-driven theming</h3>
+                            <p>The app follows Android light and dark mode automatically, and this site mirrors the same
+                                palette for a consistent brand feel.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Diagnostics memory</h3>
+                            <p>Test status is persisted so users can return to the app and still see which checks have
+                                passed, failed, or are still pending.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Widgets</h3>
+                            <p>Home-screen widgets surface RAM usage and a compact device summary without opening the
+                                full app.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Firebase support</h3>
+                            <p>Firebase Analytics, Crashlytics, and Remote Config help measure stability, understand
+                                product usage, and manage controlled improvements.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Privacy-first transparency</h3>
+                            <p>The app website clearly explains what is read on-device, what is sent to Firebase, and
+                                why each declared permission exists.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="privacy">
+                <div class="container">
+                    <div class="privacy-preview panel">
+                        <div>
+                            <p class="eyebrow">Privacy</p>
+                            <h2>Clear permission and data-use language for Google Play review.</h2>
+                            <p>
+                                The privacy policy now covers Firebase Analytics, Crashlytics, Remote Config, local
+                                diagnostics state, installed app visibility, and each manifest permission with a direct
+                                user-facing justification.
+                            </p>
+                        </div>
+
+                        <div class="privacy-preview__points" aria-label="Privacy highlights">
+                            <p>Most device information is read and displayed on the device itself.</p>
+                            <p>Firebase services are used for analytics, crash reporting, and configuration delivery.</p>
+                            <p>Camera, microphone, vibration, and package visibility are tied to explicit diagnostic or
+                                inventory features.</p>
+                            <a class="button button--primary button--compact" href="privacy_policy.html">Open full
+                                policy</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contact">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Contact</p>
+                        <h2>Support and policy questions</h2>
+                    </div>
+
+                    <div class="contact-card panel">
+                        <div>
+                            <h3>Suryansh Prajapati</h3>
+                            <p>Developer of Device Info</p>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a>
+                            <a href="https://github.com/Suryansh1720001" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="https://www.linkedin.com/in/itssuryansh/" target="_blank"
+                                rel="noreferrer">LinkedIn</a>
+                            <a href="https://twitter.com/itssuryanshP" target="_blank" rel="noreferrer">X / Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container site-footer__content">
+                <p>Device Info showcase website for Google Play listing and support.</p>
+                <p>&copy; <span data-year></span> Device Info</p>
             </div>
-
-            <div class="nav__buttons">
-                <!-- Theme Button -->
-                <a href="#" class="change-theme"><i class="uil uil-moon" id="theme-button"></i></a>
-
-                <!-- Toggle Button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-
-
-    <!-- Main -->
-    <main class="main">
-
-
-
-        <!-- Home Section -->
-        <section class="home section" id="home">
-            <img src="assets/0.png" alt="Device_home_image" class="home__img">
-
-            <div class="home__data">
-                <h1 class="home__title"><span>Device Info: CPU & System</span></h1>
-
-                <p class="home__description">
-                    One App, All Device Info at Your Fingertips
-                </p>
-
-                <div class="home__buttons">
-                    <a class="download" href="https://play.google.com/store/apps/details?id=com.information.device">
-                        Download <i class="uil uil-google-play"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <!-- Screenshots Section -->
-        <section class="secreenshots section" id="screenshots">
-            <h1 class="section__title screenshots__title">Screenshots 📸</h1>
-
-            <div class="screenshots__section">
-
-                <img src="assets/1.png" alt="screenshot_1" class="screenshots__images screenshot_1">
-                <img src="assets/2.png" alt="screenshot_2" class="screenshots__images screenshot_2">
-                <img src="assets/3.png" alt="screenshot_3" class="screenshots__images screenshot_3">
-                <img src="assets/4.png" alt="screenshot_4" class="screenshots__images screenshot_4">
-                <img src="assets/5.png" alt="screenshot_5" class="screenshots__images screenshot_5">
-                <img src="assets/6.png" alt="screenshot_6" class="screenshots__images screenshot_6">
-
-            </div>
-
-        </section>
-
-
-
-        <!-- About Section -->
-        <section class="about section" id="about">
-            <h1 class="section__title about__title">About The App</h1>
-
-            <p class="about__description">
-                Device Info: CPU & System is a user-friendly application designed to provide comprehensive details about your device's CPU and system specifications. Whether you're a casual user or a tech enthusiast, our app offers easy access to vital information such as chipset details, device model, CPU architecture, memory type, and bandwidth. We prioritize user privacy, ensuring that only necessary data is collected for app functionality. With Device Info: CPU & System, you can effortlessly explore your device's capabilities and troubleshoot technical issues with confidence<br> <br>
-
-                Why wait any longer? Embark on your artistic odyssey today and unleash your creativity to the world.
-                Download Taaveez now and experience the transformative power it holds for artists like you.
-            </p>
-
-            <div class="about__buttons">
-                <a href="privacy_policy.html" class="privacy__policy">Privacy
-                    Policy</a>
-
-            
-            </div>
-
-        </section>
-
-
-
-        <!-- FAQs Section -->
-        <!-- <section class="faqs section" id="faqs">
-            <h1 class="faqs__title section__title">Frequently Asked Questions</h1>
-
-            <div class="faqs__section">
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            1. What is Taaveez?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            Taaveez is a mobile app designed specifically for artists and entertainers. It provides a
-                            platform for users to effortlessly preserve, organize, update, and share their creative
-                            expressions.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            2. How does Taaveez benefit artists?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            Taaveez offers a user-friendly interface that allows artists to quickly capture and store
-                            their thoughts, ideas, and themes. It helps artists revisit and refine their work, keeping
-                            track of their artistic journey and important dates. Taaveez also simplifies the viewing and
-                            organization of artwork, making it easy to showcase and share creations with others.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            3. What features does Taaveez offer?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            Taaveez offers a range of state-of-the-art features to enhance the creative process. Some of
-                            the notable features include: <br> <br>
-                            - Easy capturing and jotting down of creative ideas <br> <br>
-                            - Convenient revisiting and refining of work <br> <br>
-                            - Efficient organization and tracking of artwork <br> <br>
-                            - Seamless sharing of creations with others <br> <br>
-                            - Accessible storage for all creative works in one place.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            4. Is Taaveez suitable for all artists?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            Yes, Taaveez caters to artists of all levels, from seasoned professionals to beginners.
-                            Whether you are a painter, writer, musician, or any other type of artist, Taaveez provides a
-                            versatile platform to elevate your creative process and realize your artistic potential.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            5. How can I download Taaveez?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            To download Taaveez, simply visit the respective app store for your mobile device (such as
-                            the Apple App Store or Google Play Store) and search for "Taaveez." Follow the installation
-                            instructions to get started and begin preserving, updating, and sharing your works of art
-                            with ease.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            6. Is Taaveez available for both iOS and Android devices?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            No, Taaveez is designed to be compatible only with Android platforms. You can download and
-                            use Taaveez on your Android smartphone or tablet.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            7. Is Taaveez a free app?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            Taaveez offers a free version with essential features to kickstart artists' creative
-                            journey.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            8. How can I get support or assistance with Taaveez?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            If you have any questions, concerns, or need assistance with Taaveez, you can reach out to
-                            our support team through the app. We provide prompt and helpful support to ensure a seamless
-                            experience for our users.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="all_faqs">
-                    <div class="all_faq_ques">
-                        <p>
-                            9.Is Taaveez available as an open-source project?
-                            <i class="uil uil-arrow-down"></i>
-                        </p>
-                    </div>
-
-                    <div class="all_faq_ans">
-                        <p>
-                            Yes, Taaveez is available as an open-source project. You can explore the open-source license
-                            associated with Taaveez for more details.
-                        </p>
-                    </div>
-                </div>
-
-
-            </div>
-        </section> -->
-
-
-
-        <!-- Contact Section -->
-        <section class="contact section" id="contact">
-            <h1 class="contact__title section__title">Contact Us</h1>
-
-            <div class="suryansh_prajapti_contact contact_me">
-                <h2 class="contact__title__me">Suryansh Prajapti</h2>
-                <h4 class="contact__subtitle__me">Developer</h4>
-
-                <div class="contact__links">
-                    <a href="https://github.com/Suryansh1720001" class="suryansh_github"><i class="uil uil-github-alt"></i></a>
-                    <a href="https://www.linkedin.com/in/itssuryansh/" class="suryansh_linkedin"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="https://twitter.com/itssuryanshP" class="suryansh_twitter"><i class="uil uil-twitter-alt"></i></a>
-                </div>
-            </div>
-        </section>
-
-
-
-    </main>
-
+        </footer>
+    </div>
 
     <script src="main.js"></script>
 </body>
