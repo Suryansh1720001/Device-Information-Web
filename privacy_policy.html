@@ -50,7 +50,7 @@
                             with Firebase services, and why each declared Android permission is used.
                         </p>
                         <div class="policy-meta">
-                            <span>Last updated: March 19, 2026</span>
+                            <span>Last updated: April 27, 2026</span>
                             <span>Developer: Suryansh Prajapati</span>
                             <a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a>
                         </div>
@@ -65,8 +65,8 @@
                             <h2>1. Scope</h2>
                             <p>
                                 Device Info is a native Android application that shows device hardware, software,
-                                battery, memory, network, sensor, installed-app, widget, and diagnostics information.
-                                This policy applies to the Android app and this support website.
+                                battery, memory, network, sensor, installed-app, widget, diagnostics, and export
+                                information. This policy applies to the Android app and this support website.
                             </p>
                         </section>
 
@@ -76,11 +76,13 @@
                                 The app reads device and app-related information to display it to the user inside the
                                 app. Depending on the screen or feature being used, this can include device model,
                                 manufacturer, Android version, build details, display metrics, battery state, network
-                                state, available sensors, RAM and storage details, and installed app inventory.
+                                state, available sensors, RAM and storage details, installed app inventory, and
+                                diagnostics status.
                             </p>
                             <p>
-                                Most of this information is used locally on the device to render UI, widgets, and
-                                diagnostics results. The app is not designed to sell personal information.
+                                Most of this information is used locally on the device to render UI, widgets,
+                                diagnostics results, app risk visibility, and optional PDF exports initiated by the
+                                user. The app is not designed to sell personal information.
                             </p>
                         </section>
 
@@ -111,10 +113,10 @@
                                 <div>
                                     <h3>Firebase Remote Config</h3>
                                     <p>
-                                        Used to manage app behavior and appearance without requiring an app update.
-                                        Remote Config may process country, language, time zone, platform and OS
-                                        version, app identifiers, and installation identifiers to deliver the right
-                                        configuration values.
+                                        Used to manage app behavior, update policy, and selected security or product
+                                        controls without requiring an app update. Remote Config may process country,
+                                        language, time zone, platform and OS version, app identifiers, and
+                                        installation identifiers to deliver the right configuration values.
                                     </p>
                                 </div>
                             </div>
@@ -186,19 +188,32 @@
                                     <h3><code>QUERY_ALL_PACKAGES</code></h3>
                                     <p>Used for the app's installed-app inventory feature so users can browse app
                                         details across user and supported system packages, apply filters, search by
-                                        package or app name, and review app source information. This permission relates
-                                        to a visible, user-facing app management and device information feature.</p>
+                                        package or app name, review app source information, and surface risk-related
+                                        visibility for supported packages. This permission relates to a visible,
+                                        user-facing app management and device information feature.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>ACTIVITY_RECOGNITION</code></h3>
+                                    <p>Used for Sensor Lab behavior tied to step-counter style sensors on supported
+                                        devices. This supports session-relative movement or sensor experiences and is
+                                        not intended for background fitness profiling.</p>
                                 </article>
                             </div>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>5. Installed apps visibility</h2>
+                            <h2>5. Installed apps visibility and risk analysis</h2>
                             <p>
                                 If the installed-app inventory feature is used, Device Info may access package names,
                                 app labels, icons, version information, install or update timestamps, source type, and
                                 other app metadata available through Android package APIs. This information is used to
                                 render the Apps tab and related summaries.
+                            </p>
+                            <p>
+                                The app may also apply risk-oriented rules to supported packages, including
+                                source-aware heuristics and remotely delivered package signals, so potentially unsafe
+                                apps can be surfaced to the user inside the Apps experience.
                             </p>
                             <p>
                                 App inventory data is treated as sensitive by Google Play policy. It should be used only
@@ -208,16 +223,32 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>6. Diagnostics and local storage</h2>
+                            <h2>6. Diagnostics, Sensor Lab, and local storage</h2>
                             <p>
                                 The app may store local diagnostic state on the device so pass, fail, and in-progress
-                                test results can remain visible after app restarts. This local state supports the user
-                                experience and is not intended to act as a hidden profile of the user.
+                                test results can remain visible after app restarts. Sensor Lab may also maintain
+                                short-lived in-app history needed for live charts or recent sensor activity views.
+                                This local state supports the user experience and is not intended to act as a hidden
+                                profile of the user.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>7. Data sharing</h2>
+                            <h2>7. PDF exports, widgets, and updates</h2>
+                            <p>
+                                When a user chooses to export dashboard sections to PDF, the exported document contains
+                                the device information selected for that report. Exported files are user-initiated
+                                outputs created for the user's own viewing or sharing.
+                            </p>
+                            <p>
+                                Home-screen widgets use app data to render RAM and device summary information on the
+                                device. The app may also check remotely delivered update policy and Play-provided update
+                                availability so recommended or required upgrades can be shown accurately.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>8. Data sharing</h2>
                             <p>
                                 Device Info may share technical and service-related data with Google Firebase for the
                                 purposes described above. Outside of these service providers and legal or security
@@ -226,7 +257,7 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>8. Security and retention</h2>
+                            <h2>9. Security and retention</h2>
                             <p>
                                 Reasonable steps are taken to limit data access to what is necessary for app features,
                                 debugging, and service operation. Network communication with Firebase services is
@@ -241,7 +272,7 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>9. Policy updates</h2>
+                            <h2>10. Policy updates</h2>
                             <p>
                                 This policy may be updated when app features, permissions, third-party services, or
                                 regulatory expectations change. The latest version will be published on this page with
@@ -250,7 +281,7 @@
                         </section>
 
                         <section class="policy-section panel" id="contact">
-                            <h2>10. Contact</h2>
+                            <h2>11. Contact</h2>
                             <p>
                                 If you have privacy, data handling, or permission questions, contact:
                             </p>

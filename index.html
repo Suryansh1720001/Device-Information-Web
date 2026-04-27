@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Device Info is an Android app for hardware, system, app, battery, network, sensor, and diagnostics insights with a modern Jetpack Compose UI.">
+        content="Device Info is an Android app for hardware, system, app, sensor, diagnostics, PDF export, risk insights, and widget-based device summaries.">
     <meta name="theme-color" content="#0A0E27">
     <title>Device Info | Android Device Insights</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,11 +52,11 @@
                 <div class="container hero__layout">
                     <div class="hero__copy">
                         <p class="eyebrow">Modern device diagnostics</p>
-                        <h1>Everything important about an Android device, in one clean app.</h1>
+                        <h1>Everything important about an Android device, in one focused app.</h1>
                         <p class="hero__description">
-                            Device Info brings hardware, system, battery, network, sensors, installed apps, widgets,
-                            and interactive device tests together in a polished Jetpack Compose experience that follows
-                            the system theme automatically.
+                            Device Info brings a five-tab dashboard, installed-app insights, live sensor monitoring,
+                            interactive diagnostics, PDF report export, widgets, and update-aware flows together in a
+                            polished Jetpack Compose experience.
                         </p>
 
                         <div class="hero__actions">
@@ -67,10 +67,10 @@
                         </div>
 
                         <ul class="hero__chips" aria-label="App highlights">
-                            <li>Hardware + system details</li>
-                            <li>Installed apps inventory</li>
-                            <li>Diagnostics test suite</li>
-                            <li>Widgets and live summaries</li>
+                            <li>5-tab device workspace</li>
+                            <li>PDF export reports</li>
+                            <li>Installed app risk insights</li>
+                            <li>Sensor Lab + Device Check</li>
                         </ul>
                     </div>
 
@@ -86,9 +86,9 @@
                                     class="brand-card__icon brand-card__icon--light">
                             </div>
                             <div class="brand-card__content">
-                                <h2>Updated branding</h2>
-                                <p>The showcase now uses the latest app icons and the same color direction as the
-                                    Android app.</p>
+                                <h2>Aligned with the current app</h2>
+                                <p>The website now reflects the latest documented app surface, including exports,
+                                    widgets, diagnostics, update flow, and app risk visibility.</p>
                             </div>
                         </div>
                     </div>
@@ -99,30 +99,31 @@
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">Overview</p>
-                        <h2>Built to help users understand device health, setup, and behavior quickly.</h2>
+                        <h2>Built to explain device health, software state, and app behavior without the clutter.</h2>
                         <p>
-                            The app combines read-only device insights with guided tests, so users can check hardware
-                            details, software state, app inventory, and common diagnostics from one place.
+                            The app combines read-only device insights with export tools, guided diagnostics, and live
+                            sensor feedback so users can understand both the phone and the apps running on it.
                         </p>
                     </div>
 
                     <div class="card-grid card-grid--overview">
                         <article class="info-card panel">
-                            <h3>Hardware and system</h3>
-                            <p>Model, manufacturer, board, build details, Android version, patch level, kernel,
-                                memory, storage, display, battery, network, and sensor information.</p>
+                            <h3>Five focused tabs</h3>
+                            <p>Dashboard, Hardware, System, Apps, and Tests keep the experience organized while still
+                                surfacing live battery, RAM, CPU, network, and diagnostics progress.</p>
                         </article>
 
                         <article class="info-card panel">
-                            <h3>Installed apps and package insights</h3>
-                            <p>Browse installed apps with filtering, search, version details, install dates, source
-                                type, and APK size formatting for user and supported system packages.</p>
+                            <h3>Apps inventory and risk visibility</h3>
+                            <p>Browse installed apps with search, source details, version data, install timestamps,
+                                size formatting, and risk signals for supported sideloaded or non-Play apps.</p>
                         </article>
 
                         <article class="info-card panel">
-                            <h3>Interactive diagnostics</h3>
-                            <p>Run checks for display, multi-touch, speaker, microphone, flashlight, vibration,
-                                charging, network, and supported sensors with visible pass or fail state.</p>
+                            <h3>Diagnostics hub</h3>
+                            <p>The Tests area links into Device Check and Sensor Lab so users can run manual or
+                                automatic checks, see live sensor activity, and keep pass or fail status across app
+                                restarts.</p>
                         </article>
                     </div>
                 </div>
@@ -132,44 +133,92 @@
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">Features</p>
-                        <h2>Simple, readable, and focused on real device information.</h2>
+                        <h2>Documented to match the current Android app, not an old store listing.</h2>
                     </div>
 
                     <div class="card-grid card-grid--features">
                         <article class="feature-card panel">
-                            <h3>Dashboard summaries</h3>
-                            <p>Quick-glance cards for device profile, battery, RAM, storage, display, sensors,
-                                installed apps, and diagnostics progress.</p>
+                            <h3>Dashboard export to PDF</h3>
+                            <p>Selected dashboard sections can be exported into a shareable PDF report when users need
+                                a portable summary of device information.</p>
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>System-driven theming</h3>
-                            <p>The app follows Android light and dark mode automatically, and this site mirrors the same
-                                palette for a consistent brand feel.</p>
+                            <h3>Live Sensor Lab</h3>
+                            <p>Beyond static sensor metadata, the app includes a live monitoring surface with quick
+                                health status, recent history, and waveform-style feedback.</p>
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>Diagnostics memory</h3>
-                            <p>Test status is persisted so users can return to the app and still see which checks have
-                                passed, failed, or are still pending.</p>
+                            <h3>Device Check persistence</h3>
+                            <p>Diagnostics status survives app restarts, so users can come back later and still review
+                                which checks passed, failed, or remain unfinished.</p>
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>Widgets</h3>
-                            <p>Home-screen widgets surface RAM usage and a compact device summary without opening the
-                                full app.</p>
+                            <h3>Installed-app risk analysis</h3>
+                            <p>The Apps experience can highlight suspicious combinations for supported packages and also
+                                consume remotely managed blocklist signals.</p>
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>Firebase support</h3>
-                            <p>Firebase Analytics, Crashlytics, and Remote Config help measure stability, understand
-                                product usage, and manage controlled improvements.</p>
+                            <h3>Widgets and live summaries</h3>
+                            <p>RAM usage and device summary widgets keep key information visible from the home screen,
+                                with refresh support wired into the app lifecycle.</p>
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>Privacy-first transparency</h3>
-                            <p>The app website clearly explains what is read on-device, what is sent to Firebase, and
-                                why each declared permission exists.</p>
+                            <h3>Remote-configured updates</h3>
+                            <p>Recommended and forced update rules can be delivered through Remote Config, with Play
+                                update handling or store fallback when a newer version is required.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="experience">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">In The App</p>
+                        <h2>The current product map is wider than just device specs.</h2>
+                        <p>
+                            Device Info now covers reporting, diagnostics, live sensing, widgets, updates, and
+                            installed-app analysis in addition to the classic hardware and system pages.
+                        </p>
+                    </div>
+
+                    <div class="card-grid card-grid--features">
+                        <article class="feature-card panel">
+                            <h3>Dashboard</h3>
+                            <p>Quick summaries, reactive status cards, and the entry point for PDF export.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Hardware</h3>
+                            <p>Core device identity, display details, memory, battery, and supported sensor hardware.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>System</h3>
+                            <p>Android version, build details, patch level, kernel, connectivity state, and runtime
+                                environment information.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Apps</h3>
+                            <p>Installed package inventory with source, size, install history, and risk-oriented
+                                visibility.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Tests</h3>
+                            <p>A hub for Device Check diagnostics and the Sensor Lab live-monitoring experience.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Extra routes</h3>
+                            <p>Widgets, splash-time update checks, and dedicated fullscreen flows round out the core
+                                tab experience.</p>
                         </article>
                     </div>
                 </div>
@@ -183,16 +232,17 @@
                             <h2>Clear permission and data-use language for Google Play review.</h2>
                             <p>
                                 The privacy policy now covers Firebase Analytics, Crashlytics, Remote Config, local
-                                diagnostics state, installed app visibility, and each manifest permission with a direct
-                                user-facing justification.
+                                diagnostics state, PDF export behavior, installed-app visibility and risk analysis,
+                                Sensor Lab, update checks, and each documented manifest permission.
                             </p>
                         </div>
 
                         <div class="privacy-preview__points" aria-label="Privacy highlights">
-                            <p>Most device information is read and displayed on the device itself.</p>
-                            <p>Firebase services are used for analytics, crash reporting, and configuration delivery.</p>
-                            <p>Camera, microphone, vibration, and package visibility are tied to explicit diagnostic or
-                                inventory features.</p>
+                            <p>Most device information is read and displayed locally on the device itself.</p>
+                            <p>Firebase services are used for analytics, crash reporting, config delivery, and update
+                                policy control.</p>
+                            <p>Camera, microphone, vibration, package visibility, and activity recognition are tied to
+                                explicit user-facing diagnostics or sensor features.</p>
                             <a class="button button--primary button--compact" href="privacy_policy.html">Open full
                                 policy</a>
                         </div>
@@ -219,6 +269,57 @@
                             <a href="https://www.linkedin.com/in/itssuryansh/" target="_blank"
                                 rel="noreferrer">LinkedIn</a>
                             <a href="https://twitter.com/itssuryanshP" target="_blank" rel="noreferrer">X / Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section coffee-section" id="support">
+                <div class="container">
+                    <div class="coffee-card panel">
+                        <div class="coffee-card__bg-decor" aria-hidden="true"></div>
+
+                        <div class="coffee-card__content">
+                            <div class="coffee-badge">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true">
+                                    <path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM16 13c0 2.76-2.24 5-5 5s-5-2.24-5-5V5h10v8zm2.5-3H16V5h2.5c.83 0 1.5.67 1.5 1.5S19.33 10 18.5 10z"/>
+                                </svg>
+                                Support the Developer
+                            </div>
+
+                            <h2 class="coffee-card__heading">
+                                Enjoyed Device Info?<br>
+                                <span class="coffee-highlight">Buy Suryansh a Coffee</span>
+                            </h2>
+
+                            <p class="coffee-card__desc">
+                                Device Info is completely free and ad-free, built solo with genuine care and Jetpack Compose. If it helped you understand your device better, a small contribution keeps the project alive and actively improving.
+                            </p>
+
+                            <ul class="coffee-perks">
+                                <li>
+                                    <span class="coffee-perk__dot"></span>
+                                    <span>100% free, zero advertisements, always</span>
+                                </li>
+                                <li>
+                                    <span class="coffee-perk__dot"></span>
+                                    <span>Regular updates, new features, and bug fixes</span>
+                                </li>
+                                <li>
+                                    <span class="coffee-perk__dot"></span>
+                                    <span>Crafted solo by a passionate Android developer</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="coffee-card__qr-side">
+                            <p class="coffee-card__qr-label">Scan to support</p>
+                            <div class="qr-spin-wrapper">
+                                <div class="qr-inner-card">
+                                    <img src="Qr_code.jpeg" alt="UPI QR code to support Suryansh Prajapati">
+                                </div>
+                            </div>
+                            <p class="qr-subtext">UPI &middot; Any payment app</p>
                         </div>
                     </div>
                 </div>

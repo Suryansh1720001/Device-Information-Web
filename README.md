@@ -35,6 +35,9 @@ The privacy page is written to match the current app direction and includes:
 - Firebase Crashlytics
 - Firebase Remote Config
 - local diagnostics persistence
+- dashboard PDF export coverage
+- Sensor Lab and activity-recognition explanation
+- installed-app risk analysis behavior
 - installed-app visibility explanation
 - permission-by-permission justification for the current manifest
 
@@ -43,9 +46,9 @@ The privacy page is written to match the current app direction and includes:
 When the Android app changes, review these areas:
 
 1. `index.html`
-   Update feature text and store links.
+   Update feature text, current product map, and store links.
 2. `privacy_policy.html`
-   Update permissions, Firebase usage, local storage behavior, and contact details.
+   Update permissions, Firebase usage, local storage behavior, exports, widgets, update flow, and contact details.
 3. `style.css`
    Keep colors aligned with the Android app theme.
 
