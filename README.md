@@ -29,26 +29,30 @@ The website styling mirrors the Android app color system defined in `DeviceInfoU
 
 ## Privacy Policy Coverage
 
-The privacy page is written to match the current app direction and includes:
+The privacy page is written to match Device Info `v5.0.0` and includes:
 
 - Firebase Analytics
-- Firebase Crashlytics
+- release-build Firebase Crashlytics
 - Firebase Remote Config
-- local diagnostics persistence
-- dashboard PDF export coverage
-- Sensor Lab and activity-recognition explanation
-- installed-app risk analysis behavior
-- installed-app visibility explanation
-- permission-by-permission justification for the current manifest
+- local diagnostics and in-app review state
+- Android backup and device-transfer behavior
+- 14-section dashboard PDF export coverage
+- six home-screen widgets
+- Sensor Lab, microphone, and fingerprint-test behavior
+- installed-app visibility and local risk analysis
+- advertising-ID permission removal
+- permission-by-permission justification for the current manifest, including legacy Bluetooth,
+  audio routing, and biometric use
 
 ## Updating Content
 
 When the Android app changes, review these areas:
 
 1. `index.html`
-   Update feature text, current product map, and store links.
+   Update the version, feature text, current product map, and store links.
 2. `privacy_policy.html`
-   Update permissions, Firebase usage, local storage behavior, exports, widgets, update flow, and contact details.
+   Update permissions, Firebase usage, local storage and backup behavior, exports, widgets, update
+   flow, security analysis, and contact details.
 3. `style.css`
    Keep colors aligned with the Android app theme.
 

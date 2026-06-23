@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Privacy Policy for Device Info, including Firebase services, permission usage, and data handling details.">
+        content="Privacy Policy for Device Info v5.0.0, including on-device processing, Firebase services, Android permissions, installed-app visibility, backups, and user controls.">
     <meta name="theme-color" content="#0A0E27">
     <title>Device Info | Privacy Policy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,8 @@
                             with Firebase services, and why each declared Android permission is used.
                         </p>
                         <div class="policy-meta">
-                            <span>Last updated: April 27, 2026</span>
+                            <span>Last updated: June 23, 2026</span>
+                            <span>Applies to: Version 5.0.0</span>
                             <span>Developer: Suryansh Prajapati</span>
                             <a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a>
                         </div>
@@ -65,66 +66,77 @@
                             <h2>1. Scope</h2>
                             <p>
                                 Device Info is a native Android application that shows device hardware, software,
-                                battery, memory, network, sensor, installed-app, widget, diagnostics, and export
-                                information. This policy applies to the Android app and this support website.
+                                battery, memory, thermal, network, camera, sensor, installed-app, widget, diagnostics,
+                                and export information. This policy applies to the Android app and this support website.
+                                Version 5.0.0 supports Android 11 and newer.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
                             <h2>2. Information used by the app</h2>
                             <p>
-                                The app reads device and app-related information to display it to the user inside the
-                                app. Depending on the screen or feature being used, this can include device model,
-                                manufacturer, Android version, build details, display metrics, battery state, network
-                                state, available sensors, RAM and storage details, installed app inventory, and
-                                diagnostics status.
+                                The app reads device and app-related information through Android system APIs so it can
+                                display that information to the user. Depending on the feature, this can include device
+                                model and manufacturer, Android and build details, CPU state, RAM and storage,
+                                display metrics, battery and thermal state, local network addresses, camera
+                                capabilities, available sensors, fingerprint hardware readiness, installed-app
+                                metadata, and diagnostics status.
                             </p>
                             <p>
                                 Most of this information is used locally on the device to render UI, widgets,
                                 diagnostics results, app risk visibility, and optional PDF exports initiated by the
-                                user. The app is not designed to sell personal information.
+                                user. Device Info does not create user accounts, contain advertising, request location
+                                permission, or use the device information it displays to build an advertising profile.
+                            </p>
+                            <p>
+                                The app's own code does not upload the installed package list, individual package names,
+                                sensor readings, microphone samples, fingerprint data, or generated PDF contents to
+                                Firebase.
                             </p>
                         </section>
 
                         <section class="policy-section panel" id="firebase">
                             <h2>3. Firebase services</h2>
                             <p>
-                                Device Info uses Firebase Analytics, Firebase Crashlytics, and Firebase Remote Config.
-                                These services are provided by Google and may process technical data needed to operate
-                                those services.
+                                Device Info includes Google Analytics for Firebase, Firebase Remote Config, and
+                                Firebase Crashlytics in release builds. These Google services may process technical
+                                data needed to provide analytics, configuration delivery, and crash reporting.
                             </p>
                             <div class="policy-subgrid">
                                 <div>
                                     <h3>Firebase Analytics</h3>
                                     <p>
-                                        Used to understand app usage, feature adoption, and overall product health.
-                                        Analytics may process app instance identifiers, app interaction events, and
-                                        related technical metadata.
+                                        Used to understand aggregate app usage and product health. The SDK may process
+                                        automatically generated app interaction or session events, app-instance
+                                        identifiers, and related device, app, and technical metadata according to the
+                                        project's Analytics configuration.
                                     </p>
                                 </div>
                                 <div>
                                     <h3>Firebase Crashlytics</h3>
                                     <p>
-                                        Used to detect crashes, diagnose failures, and improve stability. Crashlytics
-                                        may process crash stack traces, app state at the time of a crash, device
-                                        metadata, and installation-related identifiers.
+                                        Included in release builds to diagnose crashes and improve stability. It may
+                                        process crash traces, timestamps, app version, device model, operating-system
+                                        information, RAM or disk state, and installation-related identifiers.
                                     </p>
                                 </div>
                                 <div>
                                     <h3>Firebase Remote Config</h3>
                                     <p>
-                                        Used to manage app behavior, update policy, and selected security or product
-                                        controls without requiring an app update. Remote Config may process country,
-                                        language, time zone, platform and OS version, app identifiers, and
-                                        installation identifiers to deliver the right configuration values.
+                                        Used to deliver recommended or required update rules, curated package allow or
+                                        block signals, and in-app review settings. Firebase states that Remote Config
+                                        uses a Firebase installation ID to select configuration values for an app
+                                        installation.
                                     </p>
                                 </div>
                             </div>
                             <p class="policy-note">
-                                Firebase data handling and retention may vary by service and project settings. Firebase
-                                documentation currently states that Crashlytics retains crash data for a limited period
-                                and that installation identifiers may remain until deleted, after which removal from
-                                live and backup systems can take time.
+                                Google's current Firebase documentation states that Crashlytics keeps crash traces and
+                                associated identifiers for 90 days before beginning removal, while Remote Config keeps
+                                Firebase installation IDs until deletion is requested. See
+                                <a href="https://firebase.google.com/support/privacy" target="_blank"
+                                    rel="noreferrer">Privacy and Security in Firebase</a> for Google's current service
+                                details, retention statements, and processing locations.
                             </p>
                         </section>
 
@@ -137,6 +149,13 @@
                             </p>
 
                             <div class="permission-grid">
+                                <article class="permission-card">
+                                    <h3><code>BLUETOOTH</code></h3>
+                                    <p>Declared only for Android 11, the app's minimum supported version, so the
+                                        Bluetooth diagnostic can read adapter state and open the related system
+                                        settings. The manifest limits this legacy permission to API level 30.</p>
+                                </article>
+
                                 <article class="permission-card">
                                     <h3><code>ACCESS_NETWORK_STATE</code></h3>
                                     <p>Used to detect active network connectivity and transport type so the app can show
@@ -153,15 +172,16 @@
 
                                 <article class="permission-card">
                                     <h3><code>INTERNET</code></h3>
-                                    <p>Used for Firebase Analytics, Crashlytics, and Remote Config communication, and to
-                                        reach online services required for diagnostics or app support flows.</p>
+                                    <p>Used for Firebase Analytics, release-build Crashlytics, Remote Config, Google Play
+                                        update and review flows, and links the user chooses to open. Core device
+                                        inspection and local diagnostics do not require data to be uploaded.</p>
                                 </article>
 
                                 <article class="permission-card">
                                     <h3><code>READ_PHONE_STATE</code></h3>
-                                    <p>Used only for device and telephony-related status information that may be shown
-                                        in system or network details on supported devices, such as carrier or service
-                                        state information. It is not used to place calls or read contacts or messages.</p>
+                                    <p>Declared for compatibility with device and telephony status surfaces. Version
+                                        5.0.0 does not request this runtime permission or use it to read phone numbers,
+                                        call logs, contacts, messages, or call content.</p>
                                 </article>
 
                                 <article class="permission-card">
@@ -174,8 +194,14 @@
                                 <article class="permission-card">
                                     <h3><code>RECORD_AUDIO</code></h3>
                                     <p>Used for the microphone diagnostic to show live audio level feedback while the
-                                        user runs the test. Audio is not intended to be stored as user content by this
-                                        feature.</p>
+                                        user runs the test. The feature does not save a recording or upload microphone
+                                        audio.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>MODIFY_AUDIO_SETTINGS</code></h3>
+                                    <p>Used to temporarily route a diagnostic tone through the voice-call audio stream
+                                        for the earpiece check and restore normal audio mode when the test ends.</p>
                                 </article>
 
                                 <article class="permission-card">
@@ -188,9 +214,9 @@
                                     <h3><code>QUERY_ALL_PACKAGES</code></h3>
                                     <p>Used for the app's installed-app inventory feature so users can browse app
                                         details across user and supported system packages, apply filters, search by
-                                        package or app name, review app source information, and surface risk-related
-                                        visibility for supported packages. This permission relates to a visible,
-                                        user-facing app management and device information feature.</p>
+                                        package or app name, review source information, and see capability-based risk
+                                        indicators. The app inventory is processed locally and is not used for
+                                        advertising, analytics monetization, or resale.</p>
                                 </article>
 
                                 <article class="permission-card">
@@ -199,80 +225,146 @@
                                         devices. This supports session-relative movement or sensor experiences and is
                                         not intended for background fitness profiling.</p>
                                 </article>
+
+                                <article class="permission-card">
+                                    <h3><code>USE_BIOMETRIC</code></h3>
+                                    <p>Used to launch Android's system biometric prompt for the user-initiated
+                                        fingerprint hardware test. Authentication is handled by Android; Device Info
+                                        receives only a success, error, or cancellation result and cannot access
+                                        fingerprint templates.</p>
+                                </article>
                             </div>
                         </section>
 
                         <section class="policy-section panel">
                             <h2>5. Installed apps visibility and risk analysis</h2>
                             <p>
-                                If the installed-app inventory feature is used, Device Info may access package names,
-                                app labels, icons, version information, install or update timestamps, source type, and
-                                other app metadata available through Android package APIs. This information is used to
-                                render the Apps tab and related summaries.
+                                Device Info accesses package names, app labels, icons, versions, app size, install or
+                                update timestamps, install source, requested and granted permission metadata, and
+                                other app details available through Android package APIs. This information is used to
+                                render the Apps tab, app details, report sections, and the security summary.
                             </p>
                             <p>
-                                The app may also apply risk-oriented rules to supported packages, including
-                                source-aware heuristics and remotely delivered package signals, so potentially unsafe
-                                apps can be surfaced to the user inside the Apps experience.
+                                Risk analysis is performed locally. Depending on the app source, Device Info may check
+                                factual signals such as whether another app currently has an accessibility service,
+                                notification listener, or device-admin role enabled; whether sensitive permissions are
+                                granted; and whether a package and optional certificate hash matches a curated Remote
+                                Config allowlist or blocklist.
                             </p>
                             <p>
-                                App inventory data is treated as sensitive by Google Play policy. It should be used only
-                                for the user-facing inventory feature described in the app listing, not for advertising
-                                or resale.
+                                Heuristic findings describe capabilities and risk indicators, not proof that an app is
+                                malware. Only curated blocklist data can apply a malicious-app label. System apps are
+                                not flagged by the local heuristic scanner.
+                            </p>
+                            <p>
+                                Google Play treats installed-app inventory as sensitive data. Device Info uses broad
+                                package visibility only for its visible app-inventory and device-security features. It
+                                does not upload or sell the inventory, and does not share it for advertising or
+                                analytics monetization. See Google's
+                                <a href="https://support.google.com/googleplay/android-developer/answer/10158779"
+                                    target="_blank" rel="noreferrer">broad package visibility policy</a>.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>6. Diagnostics, Sensor Lab, and local storage</h2>
+                            <h2>6. Diagnostics, Sensor Lab, microphone, and biometrics</h2>
                             <p>
-                                The app may store local diagnostic state on the device so pass, fail, and in-progress
-                                test results can remain visible after app restarts. Sensor Lab may also maintain
-                                short-lived in-app history needed for live charts or recent sensor activity views.
-                                This local state supports the user experience and is not intended to act as a hidden
-                                profile of the user.
+                                Device Check includes user-initiated visual, audio, haptic, flashlight, button,
+                                Bluetooth, and connectivity tests. Pass, fail, running, and pending status is stored in
+                                local app preferences so results remain visible after a restart.
+                            </p>
+                            <p>
+                                Sensor Lab registers supported Android sensors while the feature is active and keeps a
+                                limited in-memory history for live charts. Step-counter values are presented relative
+                                to the current session. Sensor Lab is not designed for background movement tracking.
+                            </p>
+                            <p>
+                                The microphone test reads audio amplitude for live feedback and does not save audio
+                                recordings. The fingerprint test uses Android's protected biometric prompt; fingerprint
+                                templates remain under operating-system control and are never exposed to Device Info.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>7. PDF exports, widgets, and updates</h2>
+                            <h2>7. PDF exports, widgets, updates, and reviews</h2>
                             <p>
-                                When a user chooses to export dashboard sections to PDF, the exported document contains
-                                the device information selected for that report. Exported files are user-initiated
-                                outputs created for the user's own viewing or sharing.
+                                PDF export is user initiated. The user selects report sections and chooses the
+                                destination through Android's system document picker. The resulting PDF may include
+                                device, network, installed-app, security, sensor, camera, and diagnostics information,
+                                so users should review a report before sharing it. The app does not upload the PDF.
                             </p>
                             <p>
-                                Home-screen widgets use app data to render RAM and device summary information on the
-                                device. The app may also check remotely delivered update policy and Play-provided update
-                                availability so recommended or required upgrades can be shown accurately.
+                                Six home-screen widgets display RAM, device summary, battery, storage, CPU and
+                                temperature, or network information. Widget values remain on the device and refresh
+                                automatically, on user request, or when the app resumes.
                             </p>
-                        </section>
-
-                        <section class="policy-section panel">
-                            <h2>8. Data sharing</h2>
                             <p>
-                                Device Info may share technical and service-related data with Google Firebase for the
-                                purposes described above. Outside of these service providers and legal or security
-                                obligations, the app is not intended to sell personal information.
+                                Remote Config and Google Play APIs are used to evaluate recommended or required app
+                                updates. The app also keeps local counters and timestamps to avoid showing Play's
+                                in-app review flow too frequently. Google controls whether the review dialog appears,
+                                and Device Info does not receive the user's rating or review text from that flow.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>9. Security and retention</h2>
+                            <h2>8. Local storage and Android backup</h2>
+                            <p>
+                                The app stores diagnostic status and in-app review eligibility counters in private
+                                local preferences. Sensor chart history is session-oriented. Saved PDF reports live in
+                                the location selected by the user and are managed separately from app storage.
+                            </p>
+                            <p>
+                                Android backup and device-transfer support is enabled. Depending on Android version,
+                                device settings, and the user's backup configuration, app-managed preferences may be
+                                eligible for cloud backup or device-to-device transfer. Google or the device
+                                manufacturer controls that backup service. Clearing app storage or uninstalling the app
+                                removes local app data, but a backup may later restore eligible preferences.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>9. Sharing, advertising, and sale of data</h2>
+                            <p>
+                                Technical service data may be processed by Google through Analytics, Firebase
+                                Crashlytics, Firebase Remote Config, Google Play updates, and Google Play in-app review
+                                for the purposes described above. Data may also be disclosed when required by law or
+                                necessary to protect users, the developer, or the public.
+                            </p>
+                            <p>
+                                Device Info contains no advertising SDK and the manifest explicitly removes Google
+                                advertising-ID and AdServices advertising-attribution permissions. The developer does
+                                not sell personal information or installed-app inventory.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>10. Security and retention</h2>
                             <p>
                                 Reasonable steps are taken to limit data access to what is necessary for app features,
-                                debugging, and service operation. Network communication with Firebase services is
-                                intended to occur over secure HTTPS connections.
+                                debugging, and service operation. Firebase documents encryption in transit using HTTPS
+                                and encryption at rest for Crashlytics data.
                             </p>
                             <p>
-                                Locally stored diagnostic state can generally be removed by clearing the app's storage
-                                or uninstalling the app from the device. Retention and deletion of Firebase-processed
-                                data is governed by Firebase and Google service behavior, documentation, and project
-                                configuration.
+                                Local diagnostic and review state remains until it is overwritten, cleared with app
+                                storage, or removed by uninstalling the app, subject to any Android backup restoration.
+                                Exported PDFs remain until the user deletes them from the chosen storage location.
+                                Google-service retention follows Google's documentation and project configuration.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>10. Policy updates</h2>
+                            <h2>11. User choices and deletion</h2>
+                            <p>
+                                Camera, microphone, and activity-recognition access can be denied or revoked through
+                                Android settings; the related test or Sensor Lab feature may then be limited. The system
+                                biometric prompt can be canceled at any time. Users can clear local app data or
+                                uninstall Device Info to remove app-managed local state, manage Android backups through
+                                device or Google account settings, and delete exported PDFs through their file manager.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>12. Policy updates</h2>
                             <p>
                                 This policy may be updated when app features, permissions, third-party services, or
                                 regulatory expectations change. The latest version will be published on this page with
@@ -281,7 +373,7 @@
                         </section>
 
                         <section class="policy-section panel" id="contact">
-                            <h2>11. Contact</h2>
+                            <h2>13. Contact</h2>
                             <p>
                                 If you have privacy, data handling, or permission questions, contact:
                             </p>
