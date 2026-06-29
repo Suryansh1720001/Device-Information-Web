@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Device Info is an ad-free Android app for hardware and system details, live sensors, device diagnostics, installed-app risk insights, PDF reports, and six home-screen widgets.">
+        content="Device Info is an ad-free Android app for hardware and system details, Wi-Fi analysis, floating live metrics, device diagnostics, installed-app risk insights, PDF reports, and six home-screen widgets.">
     <meta name="theme-color" content="#0A0E27">
-    <title>Device Info | Android Hardware, Diagnostics &amp; Security Insights</title>
+    <title>Device Info | Android Diagnostics, Wi-Fi Analyzer &amp; Security Insights</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap"
@@ -23,7 +23,7 @@
                     <img src="assets/app_icon.png" alt="Device Info app icon" class="brand__icon">
                     <span class="brand__text">
                         <strong>Device Info</strong>
-                        <small>Android diagnostics and insights</small>
+                        <small>Android diagnostics and tools</small>
                     </span>
                 </a>
 
@@ -55,8 +55,8 @@
                         <h1>Understand your Android device at a glance.</h1>
                         <p class="hero__description">
                             Device Info combines live battery, RAM, CPU, network, and thermal status with detailed
-                            hardware inspection, installed-app risk signals, guided diagnostics, Sensor Lab,
-                            customizable PDF reports, and six home-screen widgets.
+                            hardware inspection, installed-app risk signals, Wi-Fi Analyzer, Floating Monitor overlay
+                            tiles, Hardware Tests, Sensor Lab, customizable PDF reports, and six home-screen widgets.
                         </p>
 
                         <div class="hero__actions">
@@ -67,9 +67,9 @@
                         </div>
 
                         <ul class="hero__chips" aria-label="App highlights">
-                            <li>5 focused tabs</li>
-                            <li>14-section PDF reports</li>
-                            <li>6 home-screen widgets</li>
+                            <li>Tools hub</li>
+                            <li>Wi-Fi Analyzer</li>
+                            <li>Floating Monitor</li>
                             <li>Free and ad-free</li>
                         </ul>
                     </div>
@@ -88,7 +88,8 @@
                             <div class="brand-card__content">
                                 <h2>One clear device workspace</h2>
                                 <p>Built with Jetpack Compose for Android 11 and newer, with dark and light themes,
-                                    live status cards, fast tab switching, and focused full-screen tools.</p>
+                                    live status cards, fast tab switching, full-screen tools, and user-started overlay
+                                    monitoring.</p>
                             </div>
                         </div>
                     </div>
@@ -101,23 +102,24 @@
                         <p class="eyebrow">Overview</p>
                         <h2>Built to explain device health, software state, and app behavior without the clutter.</h2>
                         <p>
-                            Read-only system inspection is paired with practical tests and explainable security
-                            indicators, helping users understand the device without turning the experience into a wall
-                            of raw specifications.
+                            Read-only system inspection is paired with practical tools, live diagnostics, and
+                            explainable security indicators, helping users understand the device without turning the
+                            experience into a wall of raw specifications.
                         </p>
                     </div>
 
                     <div class="card-grid card-grid--overview">
                         <article class="info-card panel">
                             <h3>Five focused tabs</h3>
-                            <p>Dashboard, Hardware, System, Apps, and Tests keep the experience organized while still
-                                surfacing live battery, RAM, CPU, network, and diagnostics progress.</p>
+                            <p>Dashboard, Hardware, System, Apps, and Tools keep the experience organized while still
+                                surfacing live battery, RAM, CPU, network, diagnostics progress, and deeper utilities.</p>
                         </article>
 
                         <article class="info-card panel">
                             <h3>Hardware and software depth</h3>
                             <p>Inspect Android and build details, CPU cores, memory, storage, display, battery, thermal
-                                state, network addresses, camera capabilities, sensors, and supported device features.</p>
+                                state, network addresses, camera capabilities, sensors, NFC support, and device
+                                features.</p>
                         </article>
 
                         <article class="info-card panel">
@@ -127,10 +129,9 @@
                         </article>
 
                         <article class="info-card panel">
-                            <h3>Diagnostics hub</h3>
-                            <p>The Tests area links into Device Check and Sensor Lab so users can run manual or
-                                automatic checks, test fingerprint hardware, see live sensor activity, and keep test
-                                status across app restarts.</p>
+                            <h3>Tools hub</h3>
+                            <p>The Tools area links into Floating Monitor, Wi-Fi Analyzer, Hardware Tests, and Sensor
+                                Lab so users can move from live overlays to detailed diagnostics without hunting around.</p>
                         </article>
                     </div>
                 </div>
@@ -145,6 +146,18 @@
 
                     <div class="card-grid card-grid--features">
                         <article class="feature-card panel">
+                            <h3>Wi-Fi Analyzer</h3>
+                            <p>Scan nearby networks, compare signal strength, band, channel, width, security, vendor,
+                                and estimated distance, then review live RSSI and least-congested channel guidance.</p>
+                        </article>
+
+                        <article class="feature-card panel">
+                            <h3>Floating Monitor</h3>
+                            <p>Start draggable overlay tiles for FPS, RAM, battery, network throughput, and storage so
+                                key device metrics stay visible while using other apps.</p>
+                        </article>
+
+                        <article class="feature-card panel">
                             <h3>Custom 14-section PDF reports</h3>
                             <p>Choose from overview, hardware, system, CPU, memory, battery, thermal, network, display,
                                 camera, sensors, apps, security, and diagnostics sections before saving a report.</p>
@@ -157,9 +170,10 @@
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>Guided Device Check</h3>
-                            <p>Run visual, speaker, earpiece, microphone, flashlight, vibration, volume-button,
-                                Bluetooth, and connectivity checks. Saved status survives app restarts.</p>
+                            <h3>Guided Hardware Tests</h3>
+                            <p>Run visual, camera, speaker, earpiece, microphone, flashlight, vibration, button, NFC,
+                                Bluetooth, Wi-Fi, location, charging, and connectivity checks. Saved status survives app
+                                restarts.</p>
                         </article>
 
                         <article class="feature-card panel">
@@ -191,7 +205,8 @@
                         <h2>The current product map is wider than just device specs.</h2>
                         <p>
                             The main five-tab shell stays simple, while dedicated screens handle deeper workflows such
-                            as memory diagnostics, full device checks, sensor monitoring, and required app updates.
+                            as Wi-Fi scanning, floating metric overlays, memory diagnostics, hardware tests, sensor
+                            monitoring, and required app updates.
                         </p>
                     </div>
 
@@ -219,14 +234,14 @@
                         </article>
 
                         <article class="feature-card panel">
-                            <h3>Tests</h3>
-                            <p>A hub for persisted Device Check diagnostics and Sensor Lab's live-monitoring tools.</p>
+                            <h3>Tools</h3>
+                            <p>A hub for Floating Monitor, Wi-Fi Analyzer, Hardware Tests, and Sensor Lab.</p>
                         </article>
 
                         <article class="feature-card panel">
                             <h3>Focused tools</h3>
-                            <p>Memory diagnostics, sensor metadata, fingerprint testing, app-update handling, widgets,
-                                and Play review flows round out the core tab experience.</p>
+                            <p>Memory diagnostics, sensor metadata, fingerprint testing, NFC checks, app-update
+                                handling, widgets, and Play review flows round out the core tab experience.</p>
                         </article>
                     </div>
                 </div>
@@ -239,17 +254,18 @@
                             <p class="eyebrow">Privacy</p>
                             <h2>Clear permission and data-use language for Google Play review.</h2>
                             <p>
-                                The policy covers on-device inspection, installed-app visibility, Firebase services,
-                                Android backup behavior, PDF exports, widgets, diagnostics, biometric testing, update
-                                checks, and every permission declared by version 5.0.0.
+                                The policy covers on-device inspection, installed-app visibility, Wi-Fi scanning,
+                                floating monitor overlays, Firebase services, Android backup behavior, PDF exports,
+                                widgets, diagnostics, biometric testing, update checks, and every permission declared
+                                by app version v6.0.0.
                             </p>
                         </div>
 
                         <div class="privacy-preview__points" aria-label="Privacy highlights">
-                            <p>Most device information is read and displayed locally on the device itself.</p>
+                            <p>Most device information, Wi-Fi scan results, and overlay readings stay on the device.</p>
                             <p>The app does not contain ads and explicitly removes advertising-ID permissions.</p>
-                            <p>Installed package names and generated PDF contents are not uploaded by the app's own
-                                code.</p>
+                            <p>Installed package names, nearby network lists, and generated PDF contents are not uploaded
+                                by the app's own code.</p>
                             <a class="button button--primary button--compact" href="privacy_policy.html">Open full
                                 policy</a>
                         </div>

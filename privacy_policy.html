@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Privacy Policy for Device Info v5.0.0, including on-device processing, Firebase services, Android permissions, installed-app visibility, backups, and user controls.">
+        content="Privacy Policy for Device Info v6.0.0, including on-device processing, Firebase services, Android permissions, Wi-Fi scanning, overlay monitoring, installed-app visibility, backups, and user controls.">
     <meta name="theme-color" content="#0A0E27">
     <title>Device Info | Privacy Policy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +50,8 @@
                             with Firebase services, and why each declared Android permission is used.
                         </p>
                         <div class="policy-meta">
-                            <span>Last updated: June 23, 2026</span>
-                            <span>Applies to: Version 5.0.0</span>
+                            <span>Last updated: June 29, 2026</span>
+                            <span>Applies to: App version v6.0.0</span>
                             <span>Developer: Suryansh Prajapati</span>
                             <a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a>
                         </div>
@@ -67,8 +67,8 @@
                             <p>
                                 Device Info is a native Android application that shows device hardware, software,
                                 battery, memory, thermal, network, camera, sensor, installed-app, widget, diagnostics,
-                                and export information. This policy applies to the Android app and this support website.
-                                Version 5.0.0 supports Android 11 and newer.
+                                Wi-Fi analyzer, floating monitor, and export information. This policy applies to the
+                                Android app and this support website. App version v6.0.0 supports Android 11 and newer.
                             </p>
                         </section>
 
@@ -78,20 +78,22 @@
                                 The app reads device and app-related information through Android system APIs so it can
                                 display that information to the user. Depending on the feature, this can include device
                                 model and manufacturer, Android and build details, CPU state, RAM and storage,
-                                display metrics, battery and thermal state, local network addresses, camera
-                                capabilities, available sensors, fingerprint hardware readiness, installed-app
-                                metadata, and diagnostics status.
+                                display metrics, battery and thermal state, local network addresses, current and nearby
+                                Wi-Fi network details, camera capabilities, available sensors, fingerprint hardware
+                                readiness, installed-app metadata, overlay monitor settings, and diagnostics status.
                             </p>
                             <p>
                                 Most of this information is used locally on the device to render UI, widgets,
                                 diagnostics results, app risk visibility, and optional PDF exports initiated by the
-                                user. Device Info does not create user accounts, contain advertising, request location
-                                permission, or use the device information it displays to build an advertising profile.
+                                user. Device Info does not create user accounts, contain advertising, request background
+                                location, collect GPS coordinates, or use the device information it displays to build an
+                                advertising profile. Fine-location permission is requested only for the Wi-Fi Analyzer
+                                because Android gates nearby Wi-Fi scan results behind that permission on many devices.
                             </p>
                             <p>
                                 The app's own code does not upload the installed package list, individual package names,
-                                sensor readings, microphone samples, fingerprint data, or generated PDF contents to
-                                Firebase.
+                                nearby Wi-Fi scan results, SSIDs, BSSIDs, sensor readings, microphone samples,
+                                fingerprint data, overlay metric readings, or generated PDF contents to Firebase.
                             </p>
                         </section>
 
@@ -166,8 +168,8 @@
                                 <article class="permission-card">
                                     <h3><code>ACCESS_WIFI_STATE</code></h3>
                                     <p>Used to read Wi-Fi connection details needed for network information screens and
-                                        diagnostics, such as current Wi-Fi state and supported connection details
-                                        available to the app.</p>
+                                        diagnostics, the network widget, and the Wi-Fi Analyzer, such as current Wi-Fi
+                                        state and supported connection details available to the app.</p>
                                 </article>
 
                                 <article class="permission-card">
@@ -178,16 +180,9 @@
                                 </article>
 
                                 <article class="permission-card">
-                                    <h3><code>READ_PHONE_STATE</code></h3>
-                                    <p>Declared for compatibility with device and telephony status surfaces. Version
-                                        5.0.0 does not request this runtime permission or use it to read phone numbers,
-                                        call logs, contacts, messages, or call content.</p>
-                                </article>
-
-                                <article class="permission-card">
                                     <h3><code>CAMERA</code></h3>
-                                    <p>Used for flashlight or torch diagnostics that rely on camera hardware access. The
-                                        permission supports the hardware test flow and is not intended for capturing
+                                    <p>Used for camera preview and flashlight or torch diagnostics that rely on camera
+                                        hardware access. These hardware tests run locally and do not save or upload
                                         photos or videos.</p>
                                 </article>
 
@@ -233,6 +228,63 @@
                                         receives only a success, error, or cancellation result and cannot access
                                         fingerprint templates.</p>
                                 </article>
+
+                                <article class="permission-card">
+                                    <h3><code>NFC</code></h3>
+                                    <p>Used by the Hardware Tests NFC panel to read local NFC adapter availability and
+                                        state on devices that support NFC. The app declares NFC as an optional hardware
+                                        feature and does not read NFC tag contents through this diagnostic.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>SYSTEM_ALERT_WINDOW</code></h3>
+                                    <p>Used only for the user-started Floating Monitor so selected metric tiles can be
+                                        drawn over other apps. The overlay permission is granted through Android system
+                                        settings and can be revoked there at any time.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>FOREGROUND_SERVICE</code></h3>
+                                    <p>Used to keep the Floating Monitor running after the app is closed while the user
+                                        has enabled on-screen metric tiles.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>FOREGROUND_SERVICE_SPECIAL_USE</code></h3>
+                                    <p>Used for the Floating Monitor foreground service type. The special-use subtype
+                                        describes a user-started device-metrics overlay that remains visible over other
+                                        apps until the user stops it.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>POST_NOTIFICATIONS</code></h3>
+                                    <p>Used on Android 13 and newer so the Floating Monitor foreground service can show
+                                        its persistent service notification and stop action. If notification access is
+                                        denied, the monitoring tiles can still run, but the notification may be hidden by
+                                        the system.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>ACCESS_FINE_LOCATION</code></h3>
+                                    <p>Used only by the Wi-Fi Analyzer to receive nearby Wi-Fi scan results through
+                                        Android's Wi-Fi APIs. The app shows an in-app disclosure before requesting this
+                                        permission, does not request background location, does not use GPS positioning,
+                                        and does not store a location history.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>NEARBY_WIFI_DEVICES</code></h3>
+                                    <p>Declared for Android 13 and newer Wi-Fi scanning support with the
+                                        <code>neverForLocation</code> flag. It supports the Wi-Fi Analyzer's nearby
+                                        network list and is not used to determine the user's physical location.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>CHANGE_WIFI_STATE</code></h3>
+                                    <p>Used by the Wi-Fi Analyzer to request a Wi-Fi scan through Android's
+                                        <code>WifiManager</code>. It is not used to silently connect to networks or
+                                        change saved network credentials.</p>
+                                </article>
                             </div>
                         </section>
 
@@ -267,11 +319,11 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>6. Diagnostics, Sensor Lab, microphone, and biometrics</h2>
+                            <h2>6. Diagnostics, Sensor Lab, microphone, NFC, and biometrics</h2>
                             <p>
-                                Device Check includes user-initiated visual, audio, haptic, flashlight, button,
-                                Bluetooth, and connectivity tests. Pass, fail, running, and pending status is stored in
-                                local app preferences so results remain visible after a restart.
+                                Hardware Tests includes user-initiated visual, camera, audio, haptic, flashlight, button,
+                                NFC, Bluetooth, and connectivity tests. Pass, fail, running, and pending status is stored
+                                in local app preferences so results remain visible after a restart.
                             </p>
                             <p>
                                 Sensor Lab registers supported Android sensors while the feature is active and keeps a
@@ -286,7 +338,30 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>7. PDF exports, widgets, updates, and reviews</h2>
+                            <h2>7. Wi-Fi Analyzer and Floating Monitor</h2>
+                            <p>
+                                Wi-Fi Analyzer scans nearby access points while the screen is open and displays SSID,
+                                BSSID, vendor, signal strength, band, channel, channel width, security type, estimated
+                                distance, current-connection details, and channel recommendations. Scan results are used
+                                for the on-screen tool and are not uploaded by the app's own code. The bundled OUI vendor
+                                lookup asset is stored in the app and does not require a runtime network lookup.
+                            </p>
+                            <p>
+                                Wi-Fi scanning may require both permission and the device's system Location toggle to be
+                                enabled because Android and some device manufacturers gate scan results that way. Device
+                                Info does not request background location, does not use GPS, and does not keep a location
+                                history.
+                            </p>
+                            <p>
+                                Floating Monitor is started by the user and shows selected device metrics, such as FPS,
+                                RAM, battery, network throughput, and storage, in draggable overlay tiles. It uses a
+                                foreground service while active, stores tile settings and positions locally, and stops
+                                when the user turns monitoring off or uses the service notification stop action.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>8. PDF exports, widgets, updates, and reviews</h2>
                             <p>
                                 PDF export is user initiated. The user selects report sections and chooses the
                                 destination through Android's system document picker. The resulting PDF may include
@@ -307,11 +382,13 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>8. Local storage and Android backup</h2>
+                            <h2>9. Local storage and Android backup</h2>
                             <p>
-                                The app stores diagnostic status and in-app review eligibility counters in private
-                                local preferences. Sensor chart history is session-oriented. Saved PDF reports live in
-                                the location selected by the user and are managed separately from app storage.
+                                The app stores diagnostic status, in-app review eligibility counters, and Floating
+                                Monitor settings such as enabled metrics, tile positions, size, theme, and transparency
+                                in private local preferences. Sensor chart history and Wi-Fi scan results are
+                                session-oriented. Saved PDF reports live in the location selected by the user and are
+                                managed separately from app storage.
                             </p>
                             <p>
                                 Android backup and device-transfer support is enabled. Depending on Android version,
@@ -323,7 +400,7 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>9. Sharing, advertising, and sale of data</h2>
+                            <h2>10. Sharing, advertising, and sale of data</h2>
                             <p>
                                 Technical service data may be processed by Google through Analytics, Firebase
                                 Crashlytics, Firebase Remote Config, Google Play updates, and Google Play in-app review
@@ -333,38 +410,42 @@
                             <p>
                                 Device Info contains no advertising SDK and the manifest explicitly removes Google
                                 advertising-ID and AdServices advertising-attribution permissions. The developer does
-                                not sell personal information or installed-app inventory.
+                                not sell personal information, installed-app inventory, Wi-Fi scan results, or overlay
+                                metric readings.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>10. Security and retention</h2>
+                            <h2>11. Security and retention</h2>
                             <p>
                                 Reasonable steps are taken to limit data access to what is necessary for app features,
                                 debugging, and service operation. Firebase documents encryption in transit using HTTPS
                                 and encryption at rest for Crashlytics data.
                             </p>
                             <p>
-                                Local diagnostic and review state remains until it is overwritten, cleared with app
-                                storage, or removed by uninstalling the app, subject to any Android backup restoration.
-                                Exported PDFs remain until the user deletes them from the chosen storage location.
-                                Google-service retention follows Google's documentation and project configuration.
+                                Local diagnostic, review, and Floating Monitor settings remain until they are
+                                overwritten, cleared with app storage, or removed by uninstalling the app, subject to any
+                                Android backup restoration. Exported PDFs remain until the user deletes them from the
+                                chosen storage location. Google-service retention follows Google's documentation and
+                                project configuration.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>11. User choices and deletion</h2>
+                            <h2>12. User choices and deletion</h2>
                             <p>
-                                Camera, microphone, and activity-recognition access can be denied or revoked through
-                                Android settings; the related test or Sensor Lab feature may then be limited. The system
-                                biometric prompt can be canceled at any time. Users can clear local app data or
+                                Camera, microphone, activity-recognition, fine-location, nearby Wi-Fi, notification, and
+                                overlay access can be denied or revoked through Android settings; the related test,
+                                Sensor Lab, Wi-Fi Analyzer, notification, or Floating Monitor feature may then be
+                                limited or unavailable. The system biometric prompt can be canceled at any time. Users
+                                can stop Floating Monitor from the app or service notification, clear local app data or
                                 uninstall Device Info to remove app-managed local state, manage Android backups through
                                 device or Google account settings, and delete exported PDFs through their file manager.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>12. Policy updates</h2>
+                            <h2>13. Policy updates</h2>
                             <p>
                                 This policy may be updated when app features, permissions, third-party services, or
                                 regulatory expectations change. The latest version will be published on this page with
@@ -373,7 +454,7 @@
                         </section>
 
                         <section class="policy-section panel" id="contact">
-                            <h2>13. Contact</h2>
+                            <h2>14. Contact</h2>
                             <p>
                                 If you have privacy, data handling, or permission questions, contact:
                             </p>

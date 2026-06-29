@@ -29,7 +29,7 @@ The website styling mirrors the Android app color system defined in `DeviceInfoU
 
 ## Privacy Policy Coverage
 
-The privacy page is written to match Device Info `v5.0.0` and includes:
+The privacy page is written to match Device Info `v6.0.0` and includes:
 
 - Firebase Analytics
 - release-build Firebase Crashlytics
@@ -39,10 +39,13 @@ The privacy page is written to match Device Info `v5.0.0` and includes:
 - 14-section dashboard PDF export coverage
 - six home-screen widgets
 - Sensor Lab, microphone, and fingerprint-test behavior
+- Wi-Fi Analyzer scan-result disclosure and location-permission limits
+- Floating Monitor overlay, foreground-service, notification, and local settings behavior
+- NFC hardware-test disclosure
 - installed-app visibility and local risk analysis
 - advertising-ID permission removal
 - permission-by-permission justification for the current manifest, including legacy Bluetooth,
-  audio routing, and biometric use
+  audio routing, biometric use, Wi-Fi scanning, and overlay monitoring
 
 ## Updating Content
 
