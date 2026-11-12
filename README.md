@@ -4,7 +4,7 @@ This repository contains the static showcase website and privacy policy page for
 
 ## Purpose
 
-The site is intended to support the Google Play listing and give users a simple place to:
+The site (sections: Overview, Features, In The App, Privacy, Contact) is intended to support the Google Play listing and give users a simple place to:
 
 - understand what the app does
 - view branding and policy information
@@ -29,30 +29,25 @@ The website styling mirrors the Android app color system defined in `DeviceInfoU
 
 ## Privacy Policy Coverage
 
-The privacy page is written to match Device Info `v6.0.0` and includes:
+The privacy page is written to match Device Info `v9.0.0` (Android 9 / API 28 and newer) and includes:
 
-- Firebase Analytics
-- release-build Firebase Crashlytics
-- Firebase Remote Config
-- local diagnostics and in-app review state
-- Android backup and device-transfer behavior
-- 14-section dashboard PDF export coverage
-- six home-screen widgets
-- Sensor Lab, microphone, and fingerprint-test behavior
-- Wi-Fi Analyzer scan-result disclosure and location-permission limits
-- Floating Monitor overlay, foreground-service, notification, and local settings behavior
-- NFC hardware-test disclosure
-- installed-app visibility and local risk analysis
+- Firebase Analytics, release-build Crashlytics and Performance Monitoring, and Remote Config
+- the opt-in public IP lookup (the app's only outbound request of its own)
+- Health Score, Weekly Digest, automatic checkups, Battery Doctor, Charger test, Benchmark and Storage & Specs
+- Inspection Certificate (Keystore signing, Key Attestation), Guided Inspection, Compare phones and QR scanning
+- Privacy & Security, App Analyzer, Developer Tools and installed-app visibility
+- Wi-Fi Analyzer, Data Usage, Floating Monitor and Session Reports
+- App Lock, Android Auto Backup rules and the password-protected backup file
+- Saved reports, PDF export, Share My Phone and six home-screen widgets
 - advertising-ID permission removal
-- permission-by-permission justification for the current manifest, including legacy Bluetooth,
-  audio routing, biometric use, Wi-Fi scanning, and overlay monitoring
+- permission-by-permission justification for the current manifest
 
 ## Updating Content
 
 When the Android app changes, review these areas:
 
 1. `index.html`
-   Update the version, feature text, current product map, and store links.
+   Update feature text, the current product map, and store links. Source of truth: the app repo's root `README.md` and `docs/play-store-listing.md`.
 2. `privacy_policy.html`
    Update permissions, Firebase usage, local storage and backup behavior, exports, widgets, update
    flow, security analysis, and contact details.

@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Device Info is an ad-free Android app for hardware and system details, Wi-Fi analysis, floating live metrics, device diagnostics, installed-app risk insights, PDF reports, and six home-screen widgets.">
+        content="Device Info is a free, ad-free Android toolkit: hardware and system details, a Device Health Score, used-phone inspection certificates, Benchmark, Battery Doctor, Wi-Fi Analyzer, Data Usage, Privacy &amp; Security checkup, Floating Monitor, PDF reports and six widgets. Everything runs on your phone.">
     <meta name="theme-color" content="#0A0E27">
-    <title>Device Info | Android Diagnostics, Wi-Fi Analyzer &amp; Security Insights</title>
+    <meta property="og:title" content="Device Info: know your phone inside out">
+    <meta property="og:image" content="assets/screens/01-hero.png">
+    <title>Device Info | Phone Health Score, Hardware Tests, Wi-Fi Analyzer &amp; Used-Phone Check</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap"
@@ -37,7 +39,9 @@
                 <div class="nav__menu" id="nav-menu" data-nav-menu>
                     <ul class="nav__list">
                         <li><a href="#overview" data-nav-link>Overview</a></li>
+                        <li><a href="#video" data-nav-link>Video</a></li>
                         <li><a href="#features" data-nav-link>Features</a></li>
+                        <li><a href="#tools" data-nav-link>Tools</a></li>
                         <li><a href="privacy_policy.html">Privacy Policy</a></li>
                         <li><a href="#contact" data-nav-link>Contact</a></li>
                     </ul>
@@ -51,12 +55,11 @@
             <section class="hero section" id="home">
                 <div class="container hero__layout">
                     <div class="hero__copy">
-                        <p class="eyebrow">Modern device diagnostics</p>
-                        <h1>Understand your Android device at a glance.</h1>
+                        <p class="eyebrow">Android diagnostics</p>
+                        <h1>Know your phone inside out.</h1>
                         <p class="hero__description">
-                            Device Info combines live battery, RAM, CPU, network, and thermal status with detailed
-                            hardware inspection, installed-app risk signals, Wi-Fi Analyzer, Floating Monitor overlay
-                            tiles, Hardware Tests, Sensor Lab, customizable PDF reports, and six home-screen widgets.
+                            Health Score, live battery, RAM and CPU, hardware tests, Wi-Fi Analyzer, a privacy
+                            checkup and a used-phone inspection certificate. Free, ad-free and on-device.
                         </p>
 
                         <div class="hero__actions">
@@ -67,16 +70,17 @@
                         </div>
 
                         <ul class="hero__chips" aria-label="App highlights">
-                            <li>Tools hub</li>
+                            <li>Health Score</li>
+                            <li>Used-phone check</li>
+                            <li>Battery Doctor</li>
                             <li>Wi-Fi Analyzer</li>
-                            <li>Floating Monitor</li>
                             <li>Free and ad-free</li>
                         </ul>
                     </div>
 
                     <div class="hero__visual">
                         <div class="device-preview panel">
-                            <img src="assets/0.png" alt="Device Info app preview" class="device-preview__image">
+                            <img src="assets/screens/01-hero.png" alt="Device Info dashboard showing device overview, Health Score, battery, network and temperature tiles" class="device-preview__image">
                         </div>
 
                         <div class="brand-card panel">
@@ -87,11 +91,27 @@
                             </div>
                             <div class="brand-card__content">
                                 <h2>One clear device workspace</h2>
-                                <p>Built with Jetpack Compose for Android 11 and newer, with dark and light themes,
-                                    live status cards, fast tab switching, full-screen tools, and user-started overlay
+                                <p>Built with Jetpack Compose for Android 9 and newer, with dark and light themes,
+                                    live status cards, a three-column Tools hub and user-started overlay
                                     monitoring.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="video">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="eyebrow">Watch</p>
+                        <h2>See Device Info in action.</h2>
+                    </div>
+
+                    <div class="video-frame panel">
+                        <iframe src="https://www.youtube-nocookie.com/embed/qPIeW7NZ4hY"
+                            title="Device Info app video" loading="lazy" allowfullscreen
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div>
             </section>
@@ -100,38 +120,30 @@
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">Overview</p>
-                        <h2>Built to explain device health, software state, and app behavior without the clutter.</h2>
+                        <h2>More than a spec sheet: a toolkit for checking, testing and trusting your phone.</h2>
                         <p>
-                            Read-only system inspection is paired with practical tools, live diagnostics, and
-                            explainable security indicators, helping users understand the device without turning the
-                            experience into a wall of raw specifications.
+                            Read-only inspection is paired with practical tests, long-term history and explainable
+                            security indicators, so you get answers such as "is this battery wearing out?" or "is this
+                            used phone what the seller says?" instead of a wall of raw values.
                         </p>
                     </div>
 
                     <div class="card-grid card-grid--overview">
                         <article class="info-card panel">
                             <h3>Five focused tabs</h3>
-                            <p>Dashboard, Hardware, System, Apps, and Tools keep the experience organized while still
-                                surfacing live battery, RAM, CPU, network, diagnostics progress, and deeper utilities.</p>
+                            <p>Dashboard, Hardware, System, Apps and Tools. The Dashboard shows a Device Health Score and live battery, RAM, CPU, network and temperature tiles; Hardware and System use a pinned chip row so you jump straight to one section.</p>
                         </article>
-
                         <article class="info-card panel">
                             <h3>Hardware and software depth</h3>
-                            <p>Inspect Android and build details, CPU cores, memory, storage, display, battery, thermal
-                                state, network addresses, camera capabilities, sensors, NFC support, and device
-                                features.</p>
+                            <p>CPU cores and live clocks, GPU, memory with kernel counters, storage, display, battery, thermal state, cameras, sensors, audio, network, Android build, security patch, SELinux and Treble.</p>
                         </article>
-
                         <article class="info-card panel">
-                            <h3>App inventory and risk visibility</h3>
-                            <p>Browse installed apps with search, source details, version data, install timestamps,
-                                size formatting, and factual capability-based risk signals.</p>
+                            <h3>Apps you can reason about</h3>
+                            <p>Search installed apps by source, size, target SDK and install date, with capability-based risk signals that describe what an app can do, never calling an app malware on a guess.</p>
                         </article>
-
                         <article class="info-card panel">
-                            <h3>Tools hub</h3>
-                            <p>The Tools area links into Floating Monitor, Wi-Fi Analyzer, Hardware Tests, and Sensor
-                                Lab so users can move from live overlays to detailed diagnostics without hunting around.</p>
+                            <h3>Private by design</h3>
+                            <p>No ads, no accounts, no data sold. Checks, scores and history are computed and kept on the phone, and backups are encrypted or kept in your own Google account.</p>
                         </article>
                     </div>
                 </div>
@@ -141,107 +153,110 @@
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">Features</p>
-                        <h2>From a quick health check to a report you can keep.</h2>
+                        <h2>From a quick health check to a certificate you can hand to a buyer.</h2>
                     </div>
 
                     <div class="card-grid card-grid--features">
                         <article class="feature-card panel">
+                            <h3>Device Health Score</h3>
+                            <p>A free 0–100 score from eight on-device factors: patch age, screen lock, storage, battery health, risky apps, failed tests, USB debugging and throttling. Unknown never costs points, and every factor links to its fix. A weekly checkup tells you only when something got worse.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Buy or sell a used phone</h3>
+                            <p>Guided Inspection walks a buyer through a physical checklist and every supported hardware test, then gives a verdict with negotiation points. Sellers get a listing title and description written from their results.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Inspection Certificate</h3>
+                            <p>Fresh hardware-test results plus a Key Attestation boot check (bootloader lock, verified boot, patch level), signed by a non-exportable Keystore key and printed as a PDF with a QR code a buyer can scan to verify. Fully on-device.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Storage &amp; Specs</h3>
+                            <p>A fake-capacity test (write, read back, compare), a read/write speed test with a UFS-class or eMMC-class verdict, and spec consistency checks for Android version, fingerprint, release keys and patch plausibility.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Benchmark and Heat test</h3>
+                            <p>A roughly 40-second score for CPU single and multi core, GPU, memory and storage, with a history of 100 runs. The Heat test loads the CPU for 3, 5 or 10 minutes to show sustained-performance loss and thermal throttling.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Battery Doctor and Charger test</h3>
+                            <p>Capacity trend over months, cycle count on Android 14+, drain per hour with screen on and off, deep-sleep ratio, a charge-limit alert and a sudden capacity-drop warning. Test chargers and cables in live watts and rank them.</p>
+                        </article>
+                        <article class="feature-card panel">
                             <h3>Wi-Fi Analyzer</h3>
-                            <p>Scan nearby networks, compare signal strength, band, channel, width, security, vendor,
-                                and estimated distance, then review live RSSI and least-congested channel guidance.</p>
+                            <p>Scan nearby networks for signal, band, channel, width, security, vendor and estimated distance, with a live signal meter, channel graph, per-channel congestion strip and 2.4 / 5 GHz channel recommendations.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Floating Monitor</h3>
-                            <p>Start draggable overlay tiles for FPS, RAM, battery, network throughput, and storage so
-                                key device metrics stay visible while using other apps.</p>
+                            <h3>Data Usage</h3>
+                            <p>Per-app Wi-Fi and mobile usage for today, 7 or 30 days with a foreground and background split. Shared UIDs are shown once with their member apps, instead of repeating one total against each app.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Custom 14-section PDF reports</h3>
-                            <p>Choose from overview, hardware, system, CPU, memory, battery, thermal, network, display,
-                                camera, sensors, apps, security, and diagnostics sections before saving a report.</p>
+                            <h3>Floating Monitor and Session Reports</h3>
+                            <p>Draggable on-screen tiles for FPS, RAM, battery, network and storage. Record a session to review average and minimum display FPS, steadiness, heat, battery used, power and thermal throttling.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Live Sensor Lab and fingerprint check</h3>
-                            <p>Review sensor health, recent readings, and waveform-style feedback, or launch Android's
-                                secure biometric prompt to verify fingerprint hardware.</p>
+                            <h3>Privacy &amp; Security</h3>
+                            <p>A checkup for screen lock, patch age, USB debugging, encryption and apps with accessibility, notification, device-admin or draw-over access, each with a Fix button. Change Watch flags new apps and newly granted permissions; Permission Insights shows which apps hold each permission.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Guided Hardware Tests</h3>
-                            <p>Run visual, camera, speaker, earpiece, microphone, flashlight, vibration, button, NFC,
-                                Bluetooth, Wi-Fi, location, charging, and connectivity checks. Saved status survives app
-                                restarts.</p>
+                            <h3>App Analyzer and Developer Tools</h3>
+                            <p>See your installed apps as a distribution by store, target SDK, minimum SDK, update age and size. App Inspector shows signing hashes, manifest components, native ABIs and flags, and lets you share or save an APK.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Explainable app risk indicators</h3>
-                            <p>Source-aware checks look at active high-risk capabilities, granted permission
-                                combinations, and curated allow or block signals without calling heuristics proof of
-                                malware.</p>
-                        </article>
-
-                        <article class="feature-card panel">
-                            <h3>Six home-screen widgets</h3>
-                            <p>Keep RAM, device summary, battery, storage, CPU and temperature, or network details on the
-                                home screen. Widgets refresh automatically and support immediate manual refresh.</p>
-                        </article>
-
-                        <article class="feature-card panel">
-                            <h3>Memory, camera, and thermal tools</h3>
-                            <p>Open dedicated memory diagnostics, inspect each detected camera through Android's
-                                Camera2 API, and monitor live thermal throttling state alongside CPU information.</p>
+                            <h3>Reports, sharing and widgets</h3>
+                            <p>Export a customizable PDF device report with a summary page for buyers, keep it in Saved reports, or share a spec-card image of your phone. Six home-screen widgets cover RAM, device summary, battery, storage, CPU and temperature, and network.</p>
                         </article>
                     </div>
                 </div>
             </section>
 
-            <section class="section" id="experience">
+            <section class="section" id="tools">
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">In The App</p>
-                        <h2>The current product map is wider than just device specs.</h2>
+                        <h2>Five tabs, and a Tools hub grouped by what you are trying to do.</h2>
                         <p>
-                            The main five-tab shell stays simple, while dedicated screens handle deeper workflows such
-                            as Wi-Fi scanning, floating metric overlays, memory diagnostics, hardware tests, sensor
-                            monitoring, and required app updates.
+                            The main shell stays simple. Tools that do the same job are merged into one screen with
+                            tabs, so Battery Doctor holds the Charger test, Benchmark holds the Heat test, and
+                            Privacy &amp; Security holds Change Watch and Permission Insights.
                         </p>
                     </div>
 
                     <div class="card-grid card-grid--features">
                         <article class="feature-card panel">
                             <h3>Dashboard</h3>
-                            <p>Quick summaries, reactive battery, RAM, CPU, network, and thermal cards, plus PDF export.</p>
+                            <p>Health Score, live tiles that open their Hardware section, and a Needs attention card only when something truly needs it.</p>
                         </article>
-
                         <article class="feature-card panel">
                             <h3>Hardware</h3>
-                            <p>Device identity, CPU, memory, display, battery, cameras, sensors, and feature support.</p>
+                            <p>Device, CPU, GPU, Display, Memory, Storage, Battery, Thermal, Camera, Sensors, Audio, Features and Network, one section at a time.</p>
                         </article>
-
                         <article class="feature-card panel">
                             <h3>System</h3>
-                            <p>Android version, build details, patch level, kernel, connectivity state, and runtime
-                                environment information.</p>
+                            <p>OS, Build, Security, Runtime, Locale and Uptime.</p>
                         </article>
-
                         <article class="feature-card panel">
                             <h3>Apps</h3>
-                            <p>Installed package inventory with source, size, install history, permission signals, and
-                                capability-based risk visibility.</p>
+                            <p>Installed-app inventory with source, size, install history, permission signals and a detail screen with an Inspect for developers shortcut.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Tools</h3>
-                            <p>A hub for Floating Monitor, Wi-Fi Analyzer, Hardware Tests, and Sensor Lab.</p>
+                            <h3>Tools: Buying or selling</h3>
+                            <p>Guided Inspection, Hardware Tests, Storage &amp; Specs, Inspection Certificate and Compare phones, which scans another phone's QR to compare specs side by side.</p>
                         </article>
-
                         <article class="feature-card panel">
-                            <h3>Focused tools</h3>
-                            <p>Memory diagnostics, sensor metadata, fingerprint testing, NFC checks, app-update
-                                handling, widgets, and Play review flows round out the core tab experience.</p>
+                            <h3>Tools: Performance</h3>
+                            <p>Floating Monitor with Session Reports, Benchmark with Heat test and History, and Sensor Lab with a fingerprint hardware check.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Tools: Battery and network</h3>
+                            <p>Battery Doctor with Charger test, Wi-Fi Analyzer and Data Usage.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Tools: Apps and privacy</h3>
+                            <p>Privacy &amp; Security, App Analyzer and Developer Tools.</p>
+                        </article>
+                        <article class="feature-card panel">
+                            <h3>Tools: More</h3>
+                            <p>Home Screen Widgets, Weekly Digest and Saved reports. Settings add App Lock, Device Insights notifications and Backup &amp; restore.</p>
                         </article>
                     </div>
                 </div>
@@ -252,20 +267,20 @@
                     <div class="privacy-preview panel">
                         <div>
                             <p class="eyebrow">Privacy</p>
-                            <h2>Clear permission and data-use language for Google Play review.</h2>
+                            <h2>Your data stays on your phone, and the policy says exactly how.</h2>
                             <p>
                                 The policy covers on-device inspection, installed-app visibility, Wi-Fi scanning,
-                                floating monitor overlays, Firebase services, Android backup behavior, PDF exports,
-                                widgets, diagnostics, biometric testing, update checks, and every permission declared
-                                by app version v6.0.0.
+                                Floating Monitor, Battery Doctor tracking, the opt-in public IP lookup, App Lock,
+                                backup and restore, Firebase services, Inspection Certificates, QR scanning,
+                                notifications, and every permission declared by app version v9.0.0.
                             </p>
                         </div>
 
                         <div class="privacy-preview__points" aria-label="Privacy highlights">
-                            <p>Most device information, Wi-Fi scan results, and overlay readings stay on the device.</p>
-                            <p>The app does not contain ads and explicitly removes advertising-ID permissions.</p>
-                            <p>Installed package names, nearby network lists, and generated PDF contents are not uploaded
-                                by the app's own code.</p>
+                            <p>Device details, scans, scores, history and reports are computed and stored on the device.</p>
+                            <p>No ads, no accounts, and advertising-ID permissions are removed from the app.</p>
+                            <p>Backups are never uploaded to the developer: Android Auto Backup uses your own Google
+                                account, and the optional backup file is encrypted with your password.</p>
                             <a class="button button--primary button--compact" href="privacy_policy.html">Open full
                                 policy</a>
                         </div>
@@ -277,7 +292,7 @@
                 <div class="container">
                     <div class="section-heading">
                         <p class="eyebrow">Contact</p>
-                        <h2>Support and policy questions</h2>
+                        <h2>Support, feedback and policy questions</h2>
                     </div>
 
                     <div class="contact-card panel">
@@ -349,6 +364,7 @@
                 </div>
             </section>
             -->
+
         </main>
 
         <footer class="site-footer">

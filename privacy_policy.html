@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Privacy Policy for Device Info v6.0.0, including on-device processing, Firebase services, Android permissions, Wi-Fi scanning, overlay monitoring, installed-app visibility, backups, and user controls.">
+        content="Privacy Policy for Device Info v9.0.0, including on-device processing, Firebase services, Android permissions, Wi-Fi scanning, overlay monitoring, battery tracking, installed-app visibility, inspection certificates, backups, and user controls.">
     <meta name="theme-color" content="#0A0E27">
     <title>Device Info | Privacy Policy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +50,8 @@
                             with Firebase services, and why each declared Android permission is used.
                         </p>
                         <div class="policy-meta">
-                            <span>Last updated: June 29, 2026</span>
-                            <span>Applies to: App version v6.0.0</span>
+                            <span>Last updated: November 12, 2026</span>
+                            <span>Applies to: App version v9.0.0</span>
                             <span>Developer: Suryansh Prajapati</span>
                             <a href="mailto:itssuryanshprajapati@gmail.com">itssuryanshprajapati@gmail.com</a>
                         </div>
@@ -67,8 +67,8 @@
                             <p>
                                 Device Info is a native Android application that shows device hardware, software,
                                 battery, memory, thermal, network, camera, sensor, installed-app, widget, diagnostics,
-                                Wi-Fi analyzer, floating monitor, and export information. This policy applies to the
-                                Android app and this support website. App version v6.0.0 supports Android 11 and newer.
+                                Wi-Fi analyzer, floating monitor, battery history, inspection, privacy-checkup, and export information. This policy applies to the
+                                Android app and this support website. The website embeds a YouTube video through youtube-nocookie.com; Google may set or read data in your browser when that video loads, under Google\'s own policies. App version v9.0.0 supports Android 9 (API 28) and newer.
                             </p>
                         </section>
 
@@ -101,8 +101,8 @@
                             <h2>3. Firebase services</h2>
                             <p>
                                 Device Info includes Google Analytics for Firebase, Firebase Remote Config, and
-                                Firebase Crashlytics in release builds. These Google services may process technical
-                                data needed to provide analytics, configuration delivery, and crash reporting.
+                                Firebase Crashlytics and Firebase Performance Monitoring in release builds. These Google services may process technical
+                                data needed to provide analytics, configuration delivery, crash reporting, and app performance measurement.
                             </p>
                             <div class="policy-subgrid">
                                 <div>
@@ -123,10 +123,19 @@
                                     </p>
                                 </div>
                                 <div>
+                                    <h3>Firebase Performance Monitoring</h3>
+                                    <p>
+                                        Included in release builds to measure app startup, screen rendering and
+                                        network-request timing so slow or janky screens can be fixed. It may process
+                                        performance traces with app version, device model, operating-system and
+                                        network-type metadata, and a Firebase installation identifier.
+                                    </p>
+                                </div>
+                                <div>
                                     <h3>Firebase Remote Config</h3>
                                     <p>
                                         Used to deliver recommended or required update rules, curated package allow or
-                                        block signals, and in-app review settings. Firebase states that Remote Config
+                                        block signals, in-app review settings, Android release-name tables, the public IP lookup endpoint and its kill switch, and pacing rules for on-device notifications. Firebase states that Remote Config
                                         uses a Firebase installation ID to select configuration values for an app
                                         installation.
                                     </p>
@@ -153,7 +162,7 @@
                             <div class="permission-grid">
                                 <article class="permission-card">
                                     <h3><code>BLUETOOTH</code></h3>
-                                    <p>Declared only for Android 11, the app's minimum supported version, so the
+                                    <p>Declared only for Android 11 and lower (the app supports Android 9 and newer) so the
                                         Bluetooth diagnostic can read adapter state and open the related system
                                         settings. The manifest limits this legacy permission to API level 30.</p>
                                 </article>
@@ -174,8 +183,7 @@
 
                                 <article class="permission-card">
                                     <h3><code>INTERNET</code></h3>
-                                    <p>Used for Firebase Analytics, release-build Crashlytics, Remote Config, Google Play
-                                        update and review flows, and links the user chooses to open. Core device
+                                    <p>Used for Firebase Analytics, release-build Crashlytics and Performance Monitoring, Remote Config, Google Play update and review flows, the optional public IP lookup (see section 7), and links the user chooses to open. Core device
                                         inspection and local diagnostics do not require data to be uploaded.</p>
                                 </article>
 
@@ -245,21 +253,17 @@
 
                                 <article class="permission-card">
                                     <h3><code>FOREGROUND_SERVICE</code></h3>
-                                    <p>Used to keep the Floating Monitor running after the app is closed while the user
-                                        has enabled on-screen metric tiles.</p>
+                                    <p>Used to keep the Floating Monitor, or Battery Doctor live tracking, running after the app is closed while the user has enabled them.</p>
                                 </article>
 
                                 <article class="permission-card">
                                     <h3><code>FOREGROUND_SERVICE_SPECIAL_USE</code></h3>
-                                    <p>Used for the Floating Monitor foreground service type. The special-use subtype
-                                        describes a user-started device-metrics overlay that remains visible over other
-                                        apps until the user stops it.</p>
+                                    <p>Used for two user-started foreground services: the Floating Monitor overlay and Battery Doctor's optional live tracking. Each has its own special-use subtype and runs only until the user turns it off.</p>
                                 </article>
 
                                 <article class="permission-card">
                                     <h3><code>POST_NOTIFICATIONS</code></h3>
-                                    <p>Used on Android 13 and newer so the Floating Monitor foreground service can show
-                                        its persistent service notification and stop action. If notification access is
+                                    <p>Used on Android 13 and newer so the Floating Monitor and Battery Doctor foreground services can show their persistent notifications, and so Device Insights, the weekly digest, and charge-limit and capacity-drop alerts can be delivered. It is requested in context, after the app has shown its value. If notification access is
                                         denied, the monitoring tiles can still run, but the notification may be hidden by
                                         the system.</p>
                                 </article>
@@ -284,6 +288,31 @@
                                     <p>Used by the Wi-Fi Analyzer to request a Wi-Fi scan through Android's
                                         <code>WifiManager</code>. It is not used to silently connect to networks or
                                         change saved network credentials.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>ACCESS_COARSE_LOCATION</code></h3>
+                                    <p>Requested together with fine location because Android 12 and newer ignore a request for fine location that does not also ask for coarse. It is used only for Wi-Fi Analyzer scanning, and no location is stored.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>READ_PHONE_STATE</code></h3>
+                                    <p>Used by Hardware ▸ Network to show the mobile network generation (4G or 5G) and roaming state, which Android requires this permission to read. The app does not read IMEI, subscriber ID, phone number or call state. If denied, the section shows an explanatory row.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>PACKAGE_USAGE_STATS</code></h3>
+                                    <p>A special access granted by hand in Android Settings, used only by Data Usage to read per-app Wi-Fi and mobile traffic totals from Android. Without it Data Usage shows a prompt and the rest of the app works normally. Usage figures are not uploaded.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>RECEIVE_BOOT_COMPLETED</code></h3>
+                                    <p>Used only so Battery Doctor live tracking resumes after a reboot, and only for a user who turned it on. The receiver reads that single preference and does nothing otherwise.</p>
+                                </article>
+
+                                <article class="permission-card">
+                                    <h3><code>USE_FINGERPRINT</code></h3>
+                                    <p>Declared for Android 9 only, where the modern biometric API is unavailable, so fingerprint readiness can be checked. It is not declared on newer versions.</p>
                                 </article>
                             </div>
                         </section>
@@ -349,27 +378,78 @@
                             <p>
                                 Wi-Fi scanning may require both permission and the device's system Location toggle to be
                                 enabled because Android and some device manufacturers gate scan results that way. Device
-                                Info does not request background location, does not use GPS, and does not keep a location
-                                history.
+                                Info does not request background location, does not use GPS, and does not keep a location history.
+                            </p>
+                            <p>
+                                Public IP lookup (Hardware ▸ Network) is the app's only outbound request of its own,
+                                apart from Firebase and Google Play SDK traffic. It runs only when you tap it, is never
+                                prefetched, and contacts an endpoint set through Remote Config, which can switch the
+                                feature off. That service necessarily sees your public IP address and normal request
+                                metadata; the result is shown on screen and not stored by the app.
                             </p>
                             <p>
                                 Floating Monitor is started by the user and shows selected device metrics, such as FPS,
                                 RAM, battery, network throughput, and storage, in draggable overlay tiles. It uses a
                                 foreground service while active, stores tile settings and positions locally, and stops
-                                when the user turns monitoring off or uses the service notification stop action.
+                                when the user turns monitoring off or uses the service notification stop action. A session can be recorded from it; Session
+                                Reports (average and minimum display FPS, battery temperature, battery used, peak RAM and
+                                a throttling flag) are saved as JSON in the app's private storage and can be deleted in
+                                the app.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>8. PDF exports, widgets, updates, and reviews</h2>
+                            <h2>8. Inspection, scoring, privacy tools and other on-device features</h2>
+                            <p>
+                                These features read data already available on the device and keep results locally.
+                                None of them upload their results to the developer.
+                            </p>
+                            <p>
+                                <strong>Health Score, Weekly Digest and automatic checkups</strong> combine on-device
+                                factors (patch age, screen lock, storage, battery health, risky apps, failed tests, USB
+                                debugging, throttling) and keep daily readings so trends can be shown. A background
+                                job runs about once a day and notifies only when something is worth attention.
+                            </p>
+                            <p>
+                                <strong>Battery Doctor and Charger test</strong> record capacity, drain and charging
+                                samples as local JSON. Live tracking is an opt-in foreground service using system
+                                broadcasts rather than polling, with a roughly six-hourly background sample as a
+                                fallback. Benchmark, Heat test and Storage &amp; Specs tests (including the write and
+                                read-back capacity check, which uses a temporary scratch file that is cleaned up) run only
+                                while you use them and keep local results.
+                            </p>
+                            <p>
+                                <strong>Inspection Certificate, Guided Inspection and Compare phones.</strong> The
+                                certificate is signed by a non-exportable key in Android Keystore and includes a Key
+                                Attestation result (bootloader lock, verified boot, patch level). It contains test results
+                                and the key fingerprint, not your IMEI or account details. QR scanning uses Google Play
+                                services Code Scanner, which does not require the CAMERA permission. A compare-phones
+                                code contains specs only.
+                            </p>
+                            <p>
+                                <strong>Privacy &amp; Security (Checkup, Change Watch, Permission Insights), App
+                                Analyzer and Developer Tools</strong> work from the installed-app list described in
+                                section 5. Change Watch stores a daily local snapshot to show what changed. Developer
+                                Tools read an app's signing details, manifest components and APK only when you open that
+                                app, and share an APK only when you choose to.
+                            </p>
+                            <p>
+                                <strong>App Lock</strong> is optional. It uses Android's biometric prompt with your
+                                phone's own screen lock as the fallback; Device Info stores no PIN, password or
+                                biometric data.
+                            </p>
+                        </section>
+
+                        <section class="policy-section panel">
+                            <h2>9. PDF exports, widgets, updates, and reviews</h2>
                             <p>
                                 PDF export is user initiated. The user selects report sections and chooses the
                                 destination through Android's system document picker. The resulting PDF may include
                                 device, network, installed-app, security, sensor, camera, and diagnostics information,
-                                so users should review a report before sharing it. The app does not upload the PDF.
+                                so users should review a report before sharing it. The app does not upload the PDF. Each exported report and issued certificate is also kept as a private copy in Saved reports (newest 30, up to 60 MB), which you can open, share or delete; these copies are excluded from backup.
                             </p>
                             <p>
-                                Six home-screen widgets display RAM, device summary, battery, storage, CPU and
+                                Share My Phone creates a spec-card image (marketed RAM and storage, chipset, display, battery, camera, optional Health Score, and a Play Store QR) with no identifiers, shared only when you choose. Six home-screen widgets display RAM, device summary, battery, storage, CPU and
                                 temperature, or network information. Widget values remain on the device and refresh
                                 automatically, on user request, or when the app resumes.
                             </p>
@@ -382,7 +462,7 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>9. Local storage and Android backup</h2>
+                            <h2>10. Local storage, saved reports and backup</h2>
                             <p>
                                 The app stores diagnostic status, in-app review eligibility counters, and Floating
                                 Monitor settings such as enabled metrics, tile positions, size, theme, and transparency
@@ -391,16 +471,20 @@
                                 managed separately from app storage.
                             </p>
                             <p>
-                                Android backup and device-transfer support is enabled. Depending on Android version,
-                                device settings, and the user's backup configuration, app-managed preferences may be
-                                eligible for cloud backup or device-to-device transfer. Google or the device
-                                manufacturer controls that backup service. Clearing app storage or uninstalling the app
-                                removes local app data, but a backup may later restore eligible preferences.
-                            </p>
+                                Android Auto Backup is enabled. Settings and history may be backed up to your own Google
+                                account, encrypted with your screen lock, and restored on a reinstall of the same phone.
+                                When a backup is restored onto a different phone, the app keeps settings and drops the
+                                history, recognised using a salted hash of the Android ID. App Lock, Change Watch's app
+                                list and saved PDFs are never backed up. Settings also offers a backup file protected
+                                with a password you choose (AES-256-GCM, key derived with PBKDF2) that you save and
+                                restore yourself; restoring it on another phone brings back settings only. Nothing is
+                                uploaded to the developer, and Google or the device manufacturer controls Android's
+                                backup service. Clearing app storage or uninstalling removes local data, but a backup
+                                may later restore eligible items.</p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>10. Sharing, advertising, and sale of data</h2>
+                            <h2>11. Sharing, advertising, and sale of data</h2>
                             <p>
                                 Technical service data may be processed by Google through Analytics, Firebase
                                 Crashlytics, Firebase Remote Config, Google Play updates, and Google Play in-app review
@@ -416,14 +500,14 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>11. Security and retention</h2>
+                            <h2>12. Security and retention</h2>
                             <p>
                                 Reasonable steps are taken to limit data access to what is necessary for app features,
                                 debugging, and service operation. Firebase documents encryption in transit using HTTPS
                                 and encryption at rest for Crashlytics data.
                             </p>
                             <p>
-                                Local diagnostic, review, and Floating Monitor settings remain until they are
+                                Local diagnostic, history, report, review, and Floating Monitor settings remain until they are
                                 overwritten, cleared with app storage, or removed by uninstalling the app, subject to any
                                 Android backup restoration. Exported PDFs remain until the user deletes them from the
                                 chosen storage location. Google-service retention follows Google's documentation and
@@ -432,20 +516,19 @@
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>12. User choices and deletion</h2>
+                            <h2>13. User choices and deletion</h2>
                             <p>
-                                Camera, microphone, activity-recognition, fine-location, nearby Wi-Fi, notification, and
-                                overlay access can be denied or revoked through Android settings; the related test,
-                                Sensor Lab, Wi-Fi Analyzer, notification, or Floating Monitor feature may then be
+                                Camera, microphone, activity-recognition, phone-state, fine-location, nearby Wi-Fi, notification, usage-access, and overlay access can be denied or revoked through Android settings; the related test,
+                                Sensor Lab, Wi-Fi Analyzer, Data Usage, notification, or Floating Monitor feature may then be
                                 limited or unavailable. The system biometric prompt can be canceled at any time. Users
-                                can stop Floating Monitor from the app or service notification, clear local app data or
+                                can stop Floating Monitor or Battery Doctor tracking from the app or service notification, turn off Device Insights or App Lock in Settings, delete saved and session reports in the app, clear local app data or
                                 uninstall Device Info to remove app-managed local state, manage Android backups through
                                 device or Google account settings, and delete exported PDFs through their file manager.
                             </p>
                         </section>
 
                         <section class="policy-section panel">
-                            <h2>13. Policy updates</h2>
+                            <h2>14. Policy updates</h2>
                             <p>
                                 This policy may be updated when app features, permissions, third-party services, or
                                 regulatory expectations change. The latest version will be published on this page with
@@ -454,7 +537,7 @@
                         </section>
 
                         <section class="policy-section panel" id="contact">
-                            <h2>14. Contact</h2>
+                            <h2>15. Contact</h2>
                             <p>
                                 If you have privacy, data handling, or permission questions, contact:
                             </p>
